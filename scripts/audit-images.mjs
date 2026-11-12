@@ -16,6 +16,38 @@ const warnings = [];
 
 const INDEXABLE = [...new Set(Object.keys(PAGE_SEO).map((r) => (r.endsWith('/') ? r : `${r}/`)))];
 
+function collectHtmlFiles(dir, out = []) {
+  if (!fs.existsSync(dir)) return out;
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, ent.name);
+    if (ent.isDirectory()) collectHtmlFiles(full, out);
+    else if (ent.name === 'index.html') out.push(full);
+  }
+  return out;
+}
+
+function routeFromHtmlFile(file) {
+  const rel = path.relative(dist, file).replace(/\\/g, '/');
+  if (rel === 'index.html') return '/';
+  return `/${rel.replace(/index\.html$/, '')}`;
+}
+
+function publicImageExists(href) {
+  const normalized = normalizeSrc(href);
+  if (!normalized.startsWith('/images/')) return true;
+  const rel = normalized.replace(/^\//, '');
+  const variants = [
+    path.join(root, 'public', rel),
+    path.join(root, 'public', rel.replace(/\.(png|jpe?g|webp)$/i, '-400.webp')),
+    path.join(root, 'public', rel.replace(/\.(png|jpe?g)$/i, '-640.webp')),
+    path.join(dist, rel),
+  ];
+  if (/\.svg$/i.test(normalized)) {
+    return fs.existsSync(path.join(root, 'public', rel)) || fs.existsSync(path.join(dist, rel));
+  }
+  return variants.some((p) => fs.existsSync(p));
+}
+
 const BAD_ALT = /\b(placeholder|lorem|todo|replace with)\b/i;
 const PLACEHOLDER_SRC = /\/images\/placeholders\//i;
 
@@ -177,11 +209,33 @@ if (warnings.length) {
   console.warn('audit-images warnings:\n' + warnings.map((w) => `  ~ ${w}`).join('\n'));
 }
 
+const allBuiltRoutes = collectHtmlFiles(dist);
+const siteChecked = new Set();
+
+for (const file of allBuiltRoutes) {
+  const route = routeFromHtmlFile(file);
+  if (siteChecked.has(route)) continue;
+  siteChecked.add(route);
+  const html = fs.readFileSync(file, 'utf8');
+  const scope = mainContentHtml(html);
+  for (const img of extractImgs(scope, route)) {
+    if (!img.src || img.src.startsWith('data:')) continue;
+    if (!publicImageExists(img.src)) {
+      errors.push(`${route}: image file missing for src ${img.src}`);
+    }
+    if (img.alt === undefined) {
+      errors.push(`${route}: <img> missing alt attribute (${img.src})`);
+    } else if (!img.alt.trim() && !img.decorative) {
+      errors.push(`${route}: empty alt on non-decorative image (${normalizeSrc(img.src)})`);
+    }
+  }
+}
+
 if (errors.length) {
   console.error('audit-images failed:\n' + errors.map((e) => `  ✗ ${e}`).join('\n'));
   process.exit(1);
 }
 
 console.log(
-  `audit-images: OK (${catalog.length} catalog assets, ${INDEXABLE.length} indexable routes)`,
+  `audit-images: OK (${catalog.length} catalog assets, ${INDEXABLE.length} indexable routes, ${siteChecked.size} built pages)`,
 );

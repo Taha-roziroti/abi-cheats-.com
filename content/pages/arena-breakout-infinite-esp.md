@@ -1,7 +1,7 @@
 ---
 route: /arena-breakout-infinite-esp/
-seoTitle: 'Arena Breakout Infinite ESP | Player & Loot'
-metaDescription: 'Explore Arena Breakout Infinite ESP, including player, AI, inventory and loot displays. See the available visual options and settings.'
+seoTitle: 'Arena Breakout Infinite ESP | Players, Loot & Bots'
+metaDescription: "Arena Breakout Infinite ESP guide: player and AI overlays, skeletons, loot value filters, distance tags, and menu toggles on supported Windows PC builds."
 schemaTypes:
   - WebPage
   - FAQPage
@@ -20,11 +20,11 @@ figures:
 ---
 # Arena Breakout Infinite ESP
 
-Information is everything when moving through the environments of Arena Breakout Infinite. Players can be positioned around corners, AI opponents can occupy nearby areas, and valuable equipment can be hidden inside containers throughout the map.
+Corners, stairwells, and container rooms hide most of what matters in Arena Breakout Infinite. ESP is how you annotate that world without memorizing every spawn pattern.
 
-Arena Breakout Infinite ESP brings different visual information together through a configurable overlay. Player details, AI displays, weapon information, health indicators, inventory details and loot values are all part of the available visual feature collection.
+This guide follows the seller’s Visuals tab: who is alive nearby, what they carry, which bots are padding the map, and which duffels might pay for your extract.
 
-Whether you're exploring player ESP, comparing the available loot displays, or adjusting the appearance of your overlay, the ABI ESP feature set gives you several configuration options to work with.
+We keep examples tied to screenshots on this page so you can match each paragraph with a menu toggle—no copy-pasted feature dump from the homepage summary.
 
 ## Player ESP and In-Game Information
 

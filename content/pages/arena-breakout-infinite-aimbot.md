@@ -1,7 +1,7 @@
 ---
 route: /arena-breakout-infinite-aimbot/
-seoTitle: 'Arena Breakout Infinite Aimbot | ABI Features'
-metaDescription: 'Explore ABI aimbot settings, including FOV, smoothness, speed, target filters and custom keybinds. Review the available configuration.'
+seoTitle: 'Arena Breakout Infinite Aimbot | FOV, Smoothing & Keys'
+metaDescription: "Arena Breakout Infinite aimbot settings: FOV circle, smoothness, speed, target filters, visible checks, and custom keybinds on supported Windows PC builds."
 schemaTypes:
   - WebPage
   - FAQPage
@@ -18,13 +18,13 @@ figures:
   - alt: 'Arena Breakout Infinite aimbot menu showing weapon recoil control, recoil strength and no-sway toggles'
     src: /images/abi/abi-menu-weapon.webp
 ---
-# Arena Breakout Infinite Aimbot
+# Arena Breakout Infinite Aimbot Features
 
-Arena Breakout Infinite puts a lot of emphasis on positioning, equipment and combat encounters. Every engagement has its own pace, and players often have different preferences when it comes to their aim configuration.
+Firefights in Arena Breakout Infinite punish hesitation. The aimbot tab is where you decide how much steering the software adds before your muscle memory kicks in.
 
-The Arena Breakout Infinite aimbot feature set includes several adjustable controls rather than relying on a single preset. FOV, smoothness, speed, maximum distance, target filters and custom keybinds are among the available settings.
+Rather than one master slider, the seller exposes FOV size, smoothing, speed caps, distance cutoffs, and target filters as separate dials. You can also ignore knocked players, require visibility checks, and bind everything to a mouse button that makes sense for your grip.
 
-There are also additional options for visible checks, knocked targets, target lines and FOV displays. Here's a closer look at the available ABI aimbot configuration.
+The sections below follow the Weapon and Aimbot menus in the order they appear in-game, with photos so you are not guessing which label matches which paragraph.
 
 ## Explore the Arena Breakout Infinite Aimbot
 

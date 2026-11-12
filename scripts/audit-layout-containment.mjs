@@ -12,18 +12,17 @@ const BASE = `http://127.0.0.1:${PORT}`;
 
 const ROUTES = [
   '/',
-  '/bodycam-aimbot/',
-  '/bodycam-esp/',
-  '/bodycam-cheats-price/',
-  '/bodycam-requirements/',
-  '/cloud-dma-for-bodycam/',
+  '/arena-breakout-infinite-aimbot/',
+  '/arena-breakout-infinite-esp/',
+  '/arena-breakout-infinite-cheats-pricing/',
+  '/cloud-dma-for-arena-breakout-infinite/',
+  '/arena-breakout-infinite-hwid-spoofer/',
   '/faq/',
   '/about/',
   '/support/',
   '/privacy/',
   '/terms/',
   '/guides/cloud-dma-setup/',
-  '/hwid-spoofer/',
 ];
 
 const VIEWPORTS = [

@@ -7,6 +7,7 @@ import { blogPostPath } from '../utils/path';
 import type { BlogPost } from '../i18n/types';
 import { t } from '../i18n';
 import { getBlogPostTimestamp, getBlogReadMinutes } from '../data/blog';
+import { resolveImageAlt } from '../utils/bodycamImageAlt';
 import { blogTagIcons } from '../data/sectionIcons';
 import type { IconName } from './icons/types';
 import { Badge } from '@/components/starwind/badge';
@@ -31,6 +32,13 @@ const href = blogPostPath(post.slug);
 const timestamp = getBlogPostTimestamp(post.date);
 const readMinutes = getBlogReadMinutes(post.readTime);
 const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
+const coverAlt = resolveImageAlt(post.image, `Cover image for “${post.title}”`);
+
+function anchorTitle(title: string, max = 52) {
+  const t = title.trim();
+  if (t.length <= max) return t;
+  return `${t.slice(0, max - 1).trimEnd()}…`;
+}
 ---
 
 <Card
@@ -54,11 +62,11 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
       isFeatured && 'blog-featured__media lg:aspect-auto lg:min-h-[16rem] lg:self-stretch',
     ]}
     tabindex="-1"
-    aria-hidden="true"
+    aria-label={`Read article: ${post.title}`}
   >
     <ResponsiveImage
       src={post.image}
-      alt=""
+      alt={coverAlt}
       width={isFeatured ? 960 : 640}
       height={isFeatured ? 540 : 360}
       widths={isFeatured ? undefined : CARD_IMAGE_WIDTHS}
@@ -144,7 +152,7 @@ const tagIcon: IconName = blogTagIcons[post.tag] ?? 'tag';
         <span>{post.readTime}</span>
       </p>
       <Button as="a" href={href} variant="outline" size="sm" class="blog-card__read shrink-0">
-        {t.blog.read}
+        Read: {anchorTitle(post.title)}
         <Icon name="arrowRight" size={16} />
       </Button>
     </CardFooter>

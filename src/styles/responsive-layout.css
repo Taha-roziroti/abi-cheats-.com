@@ -1,0 +1,43 @@
+/**
+ * Shared breakpoints for layout audits and small screens.
+ * Phone: max-width 639px · Tablet: 640–1023px · Desktop: 1024px+
+ */
+
+@media (max-width: 639px) {
+  .section-shell {
+    padding-inline: 1rem;
+  }
+
+  .content-page__grid {
+    gap: 2rem;
+  }
+
+  .content-page__aside {
+    position: static;
+    top: auto;
+  }
+
+  .legal-prose h2 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .content-page__grid.lg\:grid {
+    display: block;
+  }
+
+  .content-page__aside.hidden.lg\:block {
+    display: block;
+  }
+
+  .section-header {
+    max-width: 36rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-page__aside {
+    position: sticky;
+  }
+}

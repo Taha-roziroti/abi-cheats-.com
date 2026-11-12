@@ -23,38 +23,8 @@ export const landingHeroSlides: ProductSlide[] = [
   {
     src: ABI_IMAGES.hero.src,
     alt: ABI_IMAGES.hero.alt,
-    caption: 'ESP & aimbot in-raid',
-    captionDesc: 'Player skeleton ESP, loot tags and FOV targeting in Arena Breakout Infinite.',
-  },
-  {
-    src: ABI_IMAGES.espIndoorWallhack.src,
-    alt: ABI_IMAGES.espIndoorWallhack.alt,
-    caption: 'Wallhack & player ESP',
-    captionDesc: 'Skeleton overlays and enemy information through interior cover.',
-  },
-  {
-    src: ABI_IMAGES.menuVisuals.src,
-    alt: ABI_IMAGES.menuVisuals.alt,
-    caption: 'Visuals menu',
-    captionDesc: 'Player ESP, bot ESP, loot filters and skeleton toggles.',
-  },
-  {
-    src: ABI_IMAGES.menuWeapon.src,
-    alt: ABI_IMAGES.menuWeapon.alt,
-    caption: 'Recoil & weapon control',
-    captionDesc: 'Weapon tab with recoil strength and sway options.',
-  },
-  {
-    src: ABI_IMAGES.espLootCorridor.src,
-    alt: ABI_IMAGES.espLootCorridor.alt,
-    caption: 'Loot & distance ESP',
-    captionDesc: 'Player and item distance readouts in raid environments.',
-  },
-  {
-    src: ABI_IMAGES.aimbotScope.src,
-    alt: ABI_IMAGES.aimbotScope.alt,
-    caption: 'Scoped aimbot view',
-    captionDesc: 'Long-range skeleton ESP through magnified optics.',
+    caption: 'Arena Breakout Infinite on PC',
+    captionDesc: 'Player ESP, aimbot options, loot overlays, and plan pricing for supported Windows setups.',
   },
 ];
 

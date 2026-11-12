@@ -1,20 +1,20 @@
 ---
 route: /arena-breakout-infinite-hwid-spoofer/
-seoTitle: 'Arena Breakout Infinite HWID Spoofer | ABI'
-metaDescription: 'Explore HWID spoofing features, Windows requirements, hardware identifier options and the supported configuration for Arena Breakout.'
+seoTitle: 'Arena Breakout Infinite HWID Spoofer | PC Reset Tool'
+metaDescription: "HWID Spoofer for Arena Breakout Infinite PC: reset scope, Windows requirements, lifetime checkout pricing, and device limits enforced by the seller portal."
 schemaTypes:
   - WebPage
 layout: product
 checkout: hwid-spoofer
 noindex: true
 heroImage:
-  src: /images/abi/abi-hero.webp
-  alt: 'Arena Breakout Infinite gameplay screenshot showing player ESP skeleton, loot labels and aimbot FOV circle indoors'
+  src: /images/abi/abi-menu-visuals.webp
+  alt: 'Arena Breakout Infinite cheat Visuals menu — reference for HWID spoofer buyers on Windows PC'
 endCtaLabel: 'Explore Product Details'
 endCtaHref: '/'
 figures:
-  - alt: 'Arena Breakout Infinite gameplay screenshot showing player ESP skeleton, loot labels and aimbot FOV circle indoors'
-    src: /images/abi/abi-hero.webp
+  - alt: 'Arena Breakout Infinite ESP screenshot displaying green skeleton overlay and enemy tags through a wall'
+    src: /images/abi/abi-esp-wallhack.webp
 ---
 # Arena Breakout Infinite HWID Spoofer
 

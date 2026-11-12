@@ -75,9 +75,9 @@ body {
   margin: 0;
   font-family: var(--font-heading, ui-sans-serif, system-ui, sans-serif);
   font-size: clamp(1.875rem, 3.2vw, 2.35rem);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
   color: var(--foreground);
 }
 
@@ -95,9 +95,9 @@ body {
   margin: 0;
   max-width: 38rem;
   margin-inline: auto;
-  font-size: 0.9375rem;
-  line-height: 1.65;
-  color: var(--muted-foreground);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: color-mix(in oklab, var(--foreground) 70%, var(--muted-foreground));
 }
 
 html.dark .section-header__subtitle {

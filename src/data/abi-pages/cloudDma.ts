@@ -3,9 +3,9 @@ import type { AbiPage } from './types';
 export const cloudDmaPage: AbiPage = {
   slug: '/cloud-dma-for-arena-breakout-infinite/',
   seo: {
-    title: 'Cloud DMA for Arena Breakout Infinite | Setup',
+    title: 'Cloud DMA for Arena Breakout Infinite | ABI License',
     description:
-      'Explore Cloud DMA for Arena Breakout Infinite, including Hyper-V setup, Windows requirements, pricing and the additional services required.',
+      'Cloud DMA license for Arena Breakout Infinite: $50 lifetime, Hyper-V on one Windows PC, GREENWARD or server fees, and setup steps before cheat checkout.',
   },
   h1: 'Cloud DMA for Arena Breakout Infinite',
   introduction: `Cloud DMA is a central part of the supported Arena Breakout Infinite configuration. The ABI product lists it as required for full functionality on supported builds, making it an important part of understanding the complete setup.

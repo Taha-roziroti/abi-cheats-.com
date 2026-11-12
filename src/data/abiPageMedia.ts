@@ -4,7 +4,10 @@ import { ABI_IMAGES } from './abiImages.ts';
 export const ABI_PAGE_HERO: Partial<Record<AbiPageKey, { src: string; alt: string }>> = {
   home: ABI_IMAGES.hero,
   cloudDma: ABI_IMAGES.menuVisuals,
-  hwidSpoofer: ABI_IMAGES.hero,
+  hwidSpoofer: {
+    src: ABI_IMAGES.menuVisuals.src,
+    alt: 'Arena Breakout Infinite cheat Visuals menu — reference for HWID spoofer buyers on Windows PC',
+  },
 };
 
 export const ABI_PAGE_FIGURES: Record<AbiPageKey, { src: string; alt: string }[]> = {
@@ -16,7 +19,7 @@ export const ABI_PAGE_FIGURES: Record<AbiPageKey, { src: string; alt: string }[]
   ],
   esp: [ABI_IMAGES.espIndoorWallhack, ABI_IMAGES.espRooftop, ABI_IMAGES.espLootCorridor],
   aimbot: [ABI_IMAGES.aimbotFovOutdoor, ABI_IMAGES.aimbotScope, ABI_IMAGES.menuWeapon],
-  pricing: [ABI_IMAGES.menuVisuals, ABI_IMAGES.hero],
+  pricing: [ABI_IMAGES.menuVisuals, ABI_IMAGES.espRooftop],
   cloudDma: [ABI_IMAGES.menuVisuals, ABI_IMAGES.aimbotScope],
-  hwidSpoofer: [ABI_IMAGES.hero],
+  hwidSpoofer: [ABI_IMAGES.espIndoorWallhack],
 };

@@ -8,7 +8,7 @@ export interface AbiImageSlot {
 export const ABI_IMAGES = {
   hero: {
     src: '/images/abi/abi-hero.webp',
-    alt: 'Arena Breakout Infinite gameplay screenshot showing player ESP skeleton, loot labels and aimbot FOV circle indoors',
+    alt: 'Tactical operator overlooking a misty battlefield, representing Arena Breakout Infinite PC cheat guides',
   },
   menuVisuals: {
     src: '/images/abi/abi-menu-visuals.webp',

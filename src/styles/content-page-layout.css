@@ -31,3 +31,16 @@
 .content-page__grid--single .content-page__main .content-markdown {
   max-width: 42rem;
 }
+
+@media (max-width: 639px) {
+  .content-page__main,
+  .content-page__aside {
+    width: 100%;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .content-page__grid.lg\:grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -3,9 +3,9 @@ import type { AbiPage } from './types';
 export const pricingPage: AbiPage = {
   slug: '/arena-breakout-infinite-cheats-pricing/',
   seo: {
-    title: 'Arena Breakout Infinite Cheats Price & Plans',
+    title: 'Arena Breakout Infinite Cheats Pricing | Plans & Fees',
     description:
-      'Compare Arena Breakout Infinite monthly and lifetime plans, Cloud DMA pricing and setup requirements. Explore the available access options.',
+      'Arena Breakout Infinite pricing: $35 monthly, $150 lifetime cheat plan, $50 Cloud DMA license, and HWID checkout—compare listed offers before you purchase.',
   },
   h1: 'Arena Breakout Infinite Cheats Price & Plans',
   introduction: `Choosing an Arena Breakout Infinite cheat plan is about more than selecting a duration. It's also worth understanding which features are included, how long access lasts, and which additional components are required for the supported setup.

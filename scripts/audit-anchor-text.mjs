@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PAGE_SEO } from '../src/config/pageSeo.ts';
+import { abiPages } from '../src/data/abi-pages/index.ts';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
@@ -12,6 +13,24 @@ const errors = [];
 const warnings = [];
 
 const INDEXABLE = [...new Set(Object.keys(PAGE_SEO).map((r) => (r.endsWith('/') ? r : `${r}/`)))];
+
+function walkHtmlFiles(dir, acc = []) {
+  for (const ent of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, ent.name);
+    if (ent.isDirectory()) {
+      if (ent.name === 'go') continue;
+      walkHtmlFiles(p, acc);
+    } else if (ent.name.endsWith('.html')) acc.push(p);
+  }
+  return acc;
+}
+
+function routeFromDistFile(file) {
+  const rel = path.relative(dist, file).replace(/\\/g, '/');
+  if (rel === 'index.html') return '/';
+  if (rel === '404.html') return '/404/';
+  return `/${rel.replace(/\/index\.html$/, '')}/`;
+}
 
 const GENERIC_ANCHORS = new Set([
   'read more',
@@ -74,14 +93,13 @@ function extractAnchors(html) {
   return out;
 }
 
-// Site-wide: anchor text → destinations
+// Site-wide: anchor text → destinations (all built pages except /go/* bridges)
 const anchorToHrefs = new Map();
 const hrefAnchorCounts = new Map();
 const perPageDupes = [];
 
-for (const route of INDEXABLE) {
-  const file = htmlPath(route);
-  if (!fs.existsSync(file)) continue;
+for (const file of walkHtmlFiles(dist)) {
+  const route = routeFromDistFile(file);
   const html = fs.readFileSync(file, 'utf8');
   const anchors = extractAnchors(html);
   const seenOnPage = new Map();
@@ -106,7 +124,7 @@ for (const route of INDEXABLE) {
     }
   }
 
-  if (GENERIC_ANCHORS.size) {
+  if (INDEXABLE.includes(route) && GENERIC_ANCHORS.size) {
     for (const { text, href, raw } of anchors) {
       if (GENERIC_ANCHORS.has(text)) {
         warnings.push(
@@ -182,6 +200,24 @@ for (const m of faqSrc.matchAll(/link\("([^"]+)",\s*'([^']+)'\)/g)) {
 for (const [text, hrefs] of faqMap) {
   if (hrefs.size > 1) {
     errors.push(`faq.ts anchor conflict: "${text}" → ${[...hrefs].join(', ')}`);
+  }
+}
+
+const abiAnchorMap = new Map();
+for (const page of Object.values(abiPages)) {
+  for (const link of page.internalLinks ?? []) {
+    const text = normalizeAnchor(link.text);
+    const href = normalizeHref(link.href);
+    if (!href) continue;
+    const dests = abiAnchorMap.get(text) ?? new Set();
+    dests.add(href);
+    abiAnchorMap.set(text, dests);
+  }
+}
+
+for (const [text, hrefs] of abiAnchorMap) {
+  if (hrefs.size > 1) {
+    errors.push(`abi-pages anchor conflict: "${text}" → ${[...hrefs].join(', ')}`);
   }
 }
 

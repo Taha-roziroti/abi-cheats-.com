@@ -4,23 +4,25 @@ import sharp from 'sharp';
 
 const root = process.cwd();
 const publicDir = path.join(root, 'public');
-const brandSource = path.join(publicDir, 'brand', 'bodycam-favicon-source.jpg');
+const abiSource = path.join(publicDir, 'brand', 'abi-favicon-source.png');
 const legacySource = path.join(publicDir, 'favicon-32.png');
 
-const source = fs.existsSync(brandSource)
-  ? brandSource
-  : legacySource;
+const source = fs.existsSync(abiSource) ? abiSource : legacySource;
 
 if (!fs.existsSync(source)) {
-  console.warn('generate-brand-icons: missing brand source or public/favicon-32.png — skipping');
+  console.warn('generate-brand-icons: missing public/brand/abi-favicon-source.png — skipping');
   process.exit(0);
 }
 
 /** Logo art is black-backed; keep tabs/icons on true black. */
 const ICON_BG = { r: 0, g: 0, b: 0, alpha: 1 };
 
-/** Drop HUD timestamp strip so the wordmark reads at 16–32px. */
+/** Bodycam JPEGs had a HUD strip; ABI PNG is already cropped. */
 async function preparedLogo() {
+  if (source.includes('abi-favicon-source')) {
+    return sharp(source).rotate();
+  }
+
   const meta = await sharp(source).rotate().metadata();
   const w = meta.width ?? 0;
   const h = meta.height ?? 0;
@@ -39,10 +41,13 @@ async function preparedLogo() {
 }
 
 function squarePng(prepared, size) {
-  return prepared.clone().resize(size, size, {
-    fit: 'contain',
-    background: ICON_BG,
-  }).png();
+  return prepared
+    .clone()
+    .resize(size, size, {
+      fit: 'contain',
+      background: ICON_BG,
+    })
+    .png();
 }
 
 function pngToSingleIco(pngBuffer, dimension) {
@@ -66,19 +71,27 @@ const base = await preparedLogo();
 await squarePng(base, 32).toFile(path.join(publicDir, 'favicon-32.png'));
 await squarePng(base, 16).toFile(path.join(publicDir, 'favicon-16.png'));
 await squarePng(base, 180).toFile(path.join(publicDir, 'apple-touch-icon.png'));
-
 const png32 = await squarePng(base, 32).toBuffer();
+const png64 = await squarePng(base, 64).toBuffer();
 fs.writeFileSync(path.join(publicDir, 'favicon.ico'), pngToSingleIco(png32, 32));
 
 const base64 = png32.toString('base64');
-const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Bodycam">
+const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Arena Breakout Infinite">
   <rect width="32" height="32" fill="#000"/>
   <image href="data:image/png;base64,${base64}" width="32" height="32"/>
 </svg>
 `;
 fs.writeFileSync(path.join(publicDir, 'favicon.svg'), faviconSvg, 'utf8');
 
-const label = source.includes('bodycam-favicon-source')
-  ? 'public/brand/bodycam-favicon-source.jpg'
+const base64_64 = png64.toString('base64');
+const logoSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="ABI Cheats">
+  <rect width="64" height="64" rx="12" fill="#000"/>
+  <image href="data:image/png;base64,${base64_64}" width="64" height="64"/>
+</svg>
+`;
+fs.writeFileSync(path.join(publicDir, 'logo.svg'), logoSvg, 'utf8');
+
+const label = source.includes('abi-favicon-source')
+  ? 'public/brand/abi-favicon-source.png'
   : 'public/favicon-32.png';
 console.log(`Brand icons generated from ${label}`);

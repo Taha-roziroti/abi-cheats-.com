@@ -1,7 +1,7 @@
 ---
 route: /arena-breakout-infinite-cheats-pricing/
-seoTitle: 'Arena Breakout Infinite Cheats Price & Plans'
-metaDescription: 'Compare Arena Breakout Infinite monthly and lifetime plans, Cloud DMA pricing and setup requirements. Explore the available access options.'
+seoTitle: 'Arena Breakout Infinite Cheats Pricing | Plans & Fees'
+metaDescription: "Arena Breakout Infinite pricing: $35 monthly, $150 lifetime cheat plan, $50 Cloud DMA license, and HWID checkout—compare listed offers before you purchase."
 schemaTypes:
   - WebPage
   - FAQPage
@@ -12,8 +12,8 @@ endCtaHref: '/'
 figures:
   - alt: 'Arena Breakout Infinite cheat menu showing Visuals tab with player ESP, bot ESP, skeleton and loot settings'
     src: /images/abi/abi-menu-visuals.webp
-  - alt: 'Arena Breakout Infinite gameplay screenshot showing player ESP skeleton, loot labels and aimbot FOV circle indoors'
-    src: /images/abi/abi-hero.webp
+  - alt: 'Arena Breakout Infinite ESP with cyan skeleton on a rooftop target viewed through a holographic sight'
+    src: /images/abi/abi-esp-rooftop.webp
 ---
 # Arena Breakout Infinite Cheats Price & Plans
 

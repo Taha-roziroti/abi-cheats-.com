@@ -39,10 +39,10 @@ const setupGuide = link('Hyper-V Cloud DMA setup walkthrough', '/guides/cloud-dm
 const checkout = link('secure checkout', PRIMARY_CHECKOUT_PATH);
 const faqPage = link('full FAQ topic list', ROUTES.faq);
 
-const elite = link('Dota 2 Elite', productPath('elite'));
-const lite = link('Lite tier (map hack & ESP)', ROUTES.products);
-const pro = link('Pro tier (scripts included)', ROUTES.products);
-const productsHub = link('Dota 2 products', ROUTES.products);
+const elite = link('Explore Dota 2 Elite tier', productPath('elite'));
+const lite = link('Browse Lite tier (map hack & ESP)', ROUTES.products);
+const pro = link('Browse Pro tier (scripts included)', ROUTES.products);
+const productsHub = link('Open Dota 2 products hub', ROUTES.products);
 const hwid = link('HWID Spoofer', productPath('hwid-spoofer'));
 const ugc = link('UGC', productPath('ugc'));
 const skin = link('Skin Changer', productPath('unlock-all'));
@@ -216,10 +216,10 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
 ];
 
 export const HOME_LANDING_FAQ_SECTION_COPY = {
-  eyebrow: 'ABI FAQ',
-  title: 'Frequently asked questions',
+  eyebrow: 'Quick answers',
+  title: 'Questions players ask before buying',
   subtitle:
-    'Pricing, Windows requirements, Cloud DMA and checkout—open the full FAQ for every topic.',
+    'Short responses tied to this homepage—filter the full FAQ when you need Cloud DMA or checkout detail.',
 } as const;
 
 /** Section copy when FAQ list is scoped to the current page (not /faq/). */
@@ -319,7 +319,7 @@ const defaultBlogFaqs: SiteFaqItem[] = [
     topic: 'blog',
     icon: 'faqBlogDefault1',
     q: 'Are blog guides official product documentation?',
-    a: `Articles explain workflows and link to ${lite}, ${pro}, ${elite} and ${productsHub}. Feature lists on product pages are authoritative for checkout.`,
+    a: `Articles explain workflows and tie-ins only—feature lists on product pages are authoritative for checkout. Use the tier FAQ answers on this page for direct product links.`,
   },
   {
     id: 'blog-default-2',

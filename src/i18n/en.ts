@@ -10,7 +10,7 @@ export const en: Translations = {
     domain: 'abi-cheats.com',
     title: 'Arena Breakout Infinite Cheats | ESP & Aimbot',
     description:
-      'Explore Arena Breakout Infinite ESP, aimbot, loot displays and more. Discover the available features, system requirements and access plans.',
+      'Arena Breakout Infinite cheats on Windows PC: ESP, aimbot, loot overlays, $35 monthly and $150 lifetime plans, Cloud DMA licensing, and setup guides.',
     discord: PRIMARY_CHECKOUT_PATH,
   },
   nav: [
@@ -26,11 +26,11 @@ export const en: Translations = {
     status: 'Arena Breakout Infinite — Windows PC',
     eyebrow: 'Arena Breakout Infinite PC guides',
     titleLine1: 'Arena Breakout Infinite Cheats',
-    titleLine2: '',
+    titleLine2: 'ESP & Aimbot',
     subtitle:
-      'Explore player ESP, loot displays, aimbot settings and access plans for the PC version—summarized on this independent ABI Cheats site before checkout.',
+      'Windows guides to ESP, aimbot tuning, and raid overlays—plus straight pricing before you open checkout.',
     ctaPrimary: 'Buy now',
-    ctaDiscord: 'Compare plans',
+    ctaDiscord: 'See monthly and lifetime fees',
     modesLabel: 'Platform',
     modes: ['Windows PC', 'Dedicated GPU', 'Windows 10 & 11'],
     metrics: [
@@ -44,7 +44,7 @@ export const en: Translations = {
     eyebrow: 'Cheat features',
     title: 'Main product features at a glance',
     subtitle:
-      'Aimbot, ESP, chams, and awareness tools from the current Arena Breakout Infinite listing—see dedicated pages for aimbot and ESP depth.',
+      'Quick scan of menu tabs from the current listing—open the ESP or aimbot guides when you want screenshots and toggle-by-toggle notes.',
     items: [
       {
         title: 'Player ESP',
@@ -120,7 +120,7 @@ export const en: Translations = {
     eyebrow: 'Why us',
     title: 'A Arena Breakout Infinite–focused catalog—not a mixed-game marketplace',
     subtitle:
-      'Plans, Cloud DMA, and HWID utilities stay on Arena Breakout Infinite PC with listed features only and support you can reach before checkout.',
+      'We document one game, one seller stack, and real menu names—so you are not cross-reading Dota-era leftovers from an old template.',
     usLabel: 'ABI Cheats',
     otherLabel: 'Typical listing',
     rows: [
@@ -134,7 +134,7 @@ export const en: Translations = {
       },
       {
         title: 'Monthly and lifetime plans',
-        desc: 'Pick $35 monthly (30-day) access or a $150 lifetime license. Cloud DMA and HWID are separate checkouts.',
+        desc: 'Monthly passes and lifetime keys never share a cart with infrastructure tools—you choose each license on its own checkout screen.',
       },
       {
         title: 'Status before launch',
@@ -173,8 +173,8 @@ export const en: Translations = {
     titleHighlight: 'three clear steps',
     intro:
       'Confirm compatibility, finish checkout, then follow delivery notes for Windows PC, Cloud DMA where required, and your saved cheat profile.',
-    ctaPrimary: 'Compare plans',
-    ctaSecondary: 'Setup FAQ',
+    ctaPrimary: 'Open ABI pricing table',
+    ctaSecondary: 'Browse pre-purchase FAQ',
     ctaPrimaryHref: '/arena-breakout-infinite-cheats-pricing/',
     ctaSecondaryHref: '/faq/',
     steps: [
@@ -462,9 +462,9 @@ export const en: Translations = {
     titleAfter: '',
     subtitle:
       'A straight path from reviewing Arena Breakout Infinite compatibility to a profile you can reuse every session.',
-    ctaLabel: 'Compare plans',
+    ctaLabel: 'Review cheat plan pricing',
     ctaHref: '/arena-breakout-infinite-cheats-pricing/',
-    ctaSecondary: 'Read setup FAQ',
+    ctaSecondary: 'Open setup and delivery FAQ',
     ctaSecondaryHref: '/faq/',
     items: [
       {
@@ -504,9 +504,9 @@ export const en: Translations = {
   },
   support: {
     eyebrow: 'Support',
-    title: 'Checkout, Cloud DMA & license support',
+    title: 'ABI Cheats support for checkout and setup',
     subtitle:
-      'Questions about plans, Hyper-V setup, or license email—use the channels below before you open a ticket.',
+      'Questions about $35/$150 plans, $50 Cloud DMA, Hyper-V errors, or license email—use the channels below and include your order email.',
     channels: [
       {
         icon: 'users',
@@ -600,16 +600,17 @@ export const en: Translations = {
   },
   legalPages: {
     about: {
-      title: 'Independent ABI Cheats guides, pricing & Cloud DMA',
+      title: 'About ABI Cheats | Arena Breakout Infinite PC Guides',
       description:
-        'ABI Cheats publishes PC feature guides, Cloud DMA setup, pricing, and support resources at abi-cheats.com.',
+        'What ABI Cheats covers for Arena Breakout Infinite on Windows: ESP and aimbot guides, listed plan prices, Cloud DMA walkthroughs, and how to reach support.',
       sections: [
         {
-          heading: 'ABI Cheats: Who we are',
+          heading: 'About ABI Cheats',
           paragraphs: [
             'ABI Cheats is a resource for PC players exploring soft aim, enemy and loot ESP, radar, and related configuration options. We publish pricing, system requirements, and Cloud DMA setup guides so you can evaluate the product before checkout.',
             'Main product content on this site explains supported features, plan lengths, and the separate Cloud DMA license.',
-            'Listed offers on this site include a $35 monthly cheat plan, a $150 lifetime cheat plan, and a $50 lifetime Cloud DMA license, each with separate checkout flows.',
+            'Listed offers on this site include a $35 monthly cheat plan, a $150 lifetime cheat plan, a $50 lifetime Cloud DMA license, and a separate HWID utility checkout—each with its own secure purchase flow.',
+            'Published screenshots and menu breakdowns come from the current seller listing; when modules change after a game patch, we update the matching guide pages and FAQ entries.',
           ],
         },
         {
@@ -639,6 +640,7 @@ export const en: Translations = {
             'We may collect standard web analytics such as page views, device type, browser, and approximate region through Google Analytics when enabled. Checkout and license delivery happen on external checkout pages—we do not store payment card data on abi-cheats.com.',
             'Privacy practices here apply only to pages hosted on abi-cheats.com, not to third-party checkout or payment processors.',
             'If you email support@abi-cheats.com, we process your message to answer checkout, Cloud DMA, or license questions—not for marketing lists.',
+            'We retain support messages only long enough to resolve tickets; we do not sell contact details or combine them with advertiser lists.',
           ],
         },
         {
@@ -727,7 +729,7 @@ export const en: Translations = {
     support: {
       title: 'ABI Cheats Support',
       description:
-        'Get support for checkout, Cloud DMA setup, and license delivery at abi-cheats.com.',
+        'Contact paths for Arena Breakout Infinite checkout help, Cloud DMA Hyper-V setup, and license delivery at support@abi-cheats.com.',
     },
   },
   ui: {

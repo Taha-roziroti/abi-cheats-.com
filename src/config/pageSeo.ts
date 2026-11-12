@@ -18,33 +18,34 @@ export const PAGE_SEO: Record<string, PageSeoEntry> = Object.fromEntries(
 
 /** Supplemental routes not in the ABI keyword map. */
 PAGE_SEO['/faq/'] = {
-  title: 'ABI Cheats FAQ | Plans, Cloud DMA & Checkout',
+  title: 'ABI Cheats FAQ | Pricing, Cloud DMA & Checkout Help',
   description:
-    'Answers on Arena Breakout Infinite cheat plans, Cloud DMA licensing, Windows requirements, checkout delivery, and setup before you buy.',
+    'Arena Breakout Infinite FAQ: $35 monthly, $150 lifetime plans, $50 Cloud DMA, Windows requirements, checkout delivery, Hyper-V setup, and HWID help.',
 };
 PAGE_SEO['/support/'] = {
-  title: 'ABI Cheats Support | Checkout & Delivery',
+  title: 'ABI Cheats Support | Checkout, Delivery & Setup Help',
   description:
-    'Help with ABI checkout, license email delivery, Cloud DMA Hyper-V setup, and Windows compatibility checks before launch.',
+    'ABI support for checkout, license email, Cloud DMA Hyper-V errors, and Windows 10/11 checks—email support@abi-cheats.com with your order email and screenshots.',
 };
 PAGE_SEO['/about/'] = {
-  title: 'About ABI Cheats | Independent PC Guides',
+  title: 'About ABI Cheats | Arena Breakout Infinite PC Guides',
   description:
-    'ABI Cheats publishes Arena Breakout Infinite PC software guides, pricing, Cloud DMA setup, and support resources.',
+    'Learn what ABI Cheats publishes: Arena Breakout Infinite ESP and aimbot guides, listed $35/$150 cheat plans, $50 Cloud DMA license notes, and pre-purchase FAQ.',
 };
 PAGE_SEO['/privacy/'] = {
-  title: 'ABI Cheats Privacy Policy | Cookies & Analytics',
-  description: 'How abi-cheats.com uses privacy-friendly analytics, cookies, support email, and retention on this static site.',
+  title: 'ABI Cheats Privacy Policy | Cookies, Analytics & Email',
+  description:
+    'Privacy at abi-cheats.com: optional Google Analytics, minimal cookies, support@abi-cheats.com ticket handling, retention limits, and how to request data deletion.',
 };
 PAGE_SEO['/terms/'] = {
-  title: 'Terms of Use | ABI Cheats & Cloud DMA',
+  title: 'Terms of Use | ABI Cheats Purchases & Refund Policy',
   description:
-    'Terms for ABI cheat and Cloud DMA purchases via external checkout, license delivery, refund limits, and acceptable use of our guides.',
+    'Terms for Arena Breakout Infinite cheat and Cloud DMA purchases via secure checkout, personal license use, final-sale rules, and how to contact support with proof.',
 };
 PAGE_SEO['/guides/cloud-dma-setup/'] = {
-  title: 'Cloud DMA Setup for ABI | Hyper-V Walkthrough',
+  title: 'Cloud DMA Setup for ABI | Hyper-V Walkthrough Guide',
   description:
-    'Hyper-V setup for Cloud DMA on one PC: enable virtualization, allocate RAM, finish activation, and verify before loading Arena Breakout Infinite.',
+    'Hyper-V Cloud DMA setup on one Windows PC: enable virtualization, allocate RAM, finish activation, verify the environment, then continue to ABI cheat checkout.',
 };
 
 export function normalizeSeoPath(pathname: string): string {

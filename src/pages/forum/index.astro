@@ -16,6 +16,12 @@ const sourceTimestamp = (path?: string) => {
   const article = blogPosts.find((item) => item.slug === slug);
   return article ? getBlogPostTimestamp(article.date) : 0;
 };
+
+function clipTitle(title: string, max = 48) {
+  const t = title.trim();
+  if (t.length <= max) return t;
+  return `${t.slice(0, max - 1).trimEnd()}…`;
+}
 ---
 
 <BaseLayout title={seo.title} description={seo.description} jsonLd={[
@@ -73,11 +79,24 @@ const sourceTimestamp = (path?: string) => {
                   </div>
                   <a class="forum-post-title" href={`/forum/${post.slug}/`}>{post.title}</a>
                   <p class="forum-post-excerpt">{post.excerpt}</p>
-                  {post.sourceTitle && <p class="forum-source">From the guide: <a href={post.sourcePath}>{post.sourceTitle}</a></p>}
+                  {
+                    post.sourceTitle && post.sourcePath && (
+                      <p class="forum-source">
+                        From the guide:{' '}
+                        <a href={post.sourcePath}>
+                          {post.sourceTitle} — for “{clipTitle(post.title, 40)}”
+                        </a>
+                      </p>
+                    )
+                  }
                   <div class="forum-post-actions">
                     {post.flair && <span class={`forum-flair tone-${post.categoryTone}`}>{post.flair}</span>}
-                    <a href={`/forum/${post.slug}/`}><Icon name="messageCircle" size={15} /> {post.commentsCount} comments</a>
-                    <a href={`/forum/${post.slug}/`}><Icon name="arrowRight" size={15} /> Read discussion</a>
+                    <a href={`/forum/${post.slug}/#comments`}>
+                      <Icon name="messageCircle" size={15} /> {post.commentsCount} replies on “{clipTitle(post.title, 36)}”
+                    </a>
+                    <a href={`/forum/${post.slug}/`}>
+                      <Icon name="arrowRight" size={15} /> Open Q&amp;A: {post.title}
+                    </a>
                   </div>
                 </div>
               </article>
@@ -96,7 +115,7 @@ const sourceTimestamp = (path?: string) => {
           <section class="forum-side-card forum-about" id="community-guidelines">
             <div class="forum-side-card__banner"></div>
             <div class="forum-about__content">
-              <div class="forum-about__title"><span class="forum-community-avatar forum-community-avatar--brand"><img src="/logo.svg" alt="" width="34" height="34" /></span><h2>DotaCheats Community</h2></div>
+              <div class="forum-about__title"><span class="forum-community-avatar forum-community-avatar--brand"><img src="/logo.svg" alt="ABI Cheats logo" width="34" height="34" /></span><h2>DotaCheats Community</h2></div>
               <p>A home for Dota players to trade ideas, learn together, and celebrate the game.</p>
               <div class="forum-stats"><span><b>{forumPosts.length}</b> guide discussions</span><span><b>{forumCategories.length}</b> topics</span></div>
               <a class="forum-join" href="/blog/">Explore all guides</a>

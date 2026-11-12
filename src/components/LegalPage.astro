@@ -30,7 +30,7 @@ const { title, description, breadcrumbLabel, sections } = Astro.props;
       <p class="text-lg leading-relaxed text-muted-foreground">{description}</p>
     </header>
 
-    <Prose class="mt-10 max-w-none text-left">
+    <Prose class="legal-prose mt-10 max-w-none text-left">
       {sections.map((section) => (
         <section class="mt-8">
           <h2>{section.heading}</h2>

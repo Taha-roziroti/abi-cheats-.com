@@ -3,117 +3,80 @@ import type { AbiPage } from './types';
 export const homePage: AbiPage = {
   slug: '/',
   seo: {
-    title: 'Arena Breakout Infinite Cheats | ESP & Aimbot',
+    title: 'Arena Breakout Infinite Cheats | ESP, Aimbot & Plans',
     description:
-      'Explore Arena Breakout Infinite ESP, aimbot, loot displays and more. Discover the available features, system requirements and access plans.',
+      'Arena Breakout Infinite cheats on Windows PC: player ESP, aimbot options, loot overlays, $35 monthly and $150 lifetime plans, plus Cloud DMA setup guides.',
   },
   h1: 'Arena Breakout Infinite Cheats',
-  introduction: `Every raid in Arena Breakout Infinite is a different story. One moment you're moving through a quiet building, and the next you're deciding whether to push an enemy squad, search a valuable container, or make a quick exit with everything you've collected.
+  introduction: `Raids in Arena Breakout Infinite rarely play out the way they look on a minimap. Corners talk, footsteps lie, and the best loot often sits one gunfight away from a bad decision.
 
-ABI Cheats brings together a collection of visual and combat features designed around the PC version of Arena Breakout Infinite. From player ESP and detailed inventory displays to configurable aimbot options, the available tools give you a range of settings to explore.
+ABI Cheats is a Windows PC guide to the overlay stack sellers list for this game—not a generic “all games” marketplace. We break down what the menus actually expose, what Cloud DMA changes on your machine, and how monthly versus lifetime checkout works before you pay.
 
-Whether you're interested in tracking activity around the map, checking valuable loot, or customizing your aim settings, take a closer look at what the Arena Breakout Infinite cheat package includes.`,
+Skim the feature grid above for a quick visual tour, then use the sections below when you want the slower, written walkthrough with links to deeper pages.`,
   sections: [
     {
-      heading: 'Explore the Arena Breakout Infinite Cheat Features',
+      heading: 'ESP, combat tuning, and how this guide is organized',
       paragraphs: [
-        `Arena Breakout Infinite has plenty happening beyond what appears directly in front of you. Its environments contain players, AI-controlled enemies, equipment, containers, and valuable items that can all influence how a raid unfolds.
-
-The ABI cheat package combines multiple visual options in one configurable interface. Choose the information you want to display, explore the available overlays, and arrange the interface around the details that interest you.`,
-        `Player ESP, AI ESP, inventory information, distance indicators, health displays, weapon details, and corpse-value options provide different ways to view activity throughout a match.`,
+        `You will not find vague “fully unlocked” marketing here. Pages track real menu tabs—visuals, weapons, aim tuning—and spell out which toggles belong to ESP, which belong to combat assist, and which are pure quality-of-life options. Screenshots on each guide match the current ABI listing so you can compare names in the UI with names in the prose. When a module moves after a patch, we update the matching page rather than leaving stale labels online.`,
+        `Think of ESP as a second HUD on top of the raid. Player markers can show health, weapon type, or bone lines; AI bots get their own color rules so you do not confuse scavs with PMCs in a hurry. Boxes, snaplines, and inventory panels can be mixed to keep the screen readable instead of turning into Christmas lights. The dedicated ESP guide walks through each toggle with photos—start there when you are wiring a minimalist layout.`,
+        `Container runs live or die on knowing which duffel is worth opening. Loot ESP surfaces item value bands, corpse payouts, and distance filters so you can ignore pocket change while pushing toward extracts. Price floors and max-distance sliders matter more on indoor maps where clutter stacks up fast; we explain how those filters interact with corpse ESP on the ESP page rather than repeating every slider name here.`,
+        `Aim assist menus are less about “on/off” and more about constraints: FOV cone width, smoothing speed, whether knocked players are ignored, and which mouse button arms the feature. Pair those combat settings with the weapon tab—recoil strength, sway, no-spread options—and you get a loadout-specific profile instead of one global slider. The aimbot guide breaks down each control with in-game captures when you want line-by-line detail.`,
+      ],
+    },
+    {
+      heading: 'Windows PC requirements, Cloud DMA, and launch readiness',
+      paragraphs: [
+        `Seller checklists for ABI still assume a modern Windows 10 or 11 box with TPM, Secure Boot, HVCI, and Core Isolation enabled. Budget at least 8 GB of RAM (16 GB is saner for Hyper-V) and a recent NVIDIA or AMD GPU. Match CPU and GPU notes on the product page before you buy—laptops with virtualization disabled need fixing before Cloud DMA even enters the picture.`,
+        `Full functionality on supported builds also expects Cloud DMA provisioned on the same PC. Treat that license as infrastructure, not a cosmetic add-on: Hyper-V, optional GREENWARD activation, and sometimes separate server fees all sit outside the core cheat checkout. Read the Cloud DMA guide for the one-PC Hyper-V walkthrough before you add that line item to your cart.`,
+        `After patches, skim Support and the requirements guides even if nothing failed overnight. Game and Windows updates can shift compatibility flags; documenting your build number and any loader errors early saves back-and-forth with support.`,
+      ],
+    },
+    {
+      heading: 'Plans, separate checkouts, and where to go next',
+      paragraphs: [
+        `Checkout stays split on purpose. The main cheat plan bills at **$35** for a 30-day window or **$150** for lifetime access on the listing we mirror. Cloud DMA is its own **$50** lifetime line item, and the HWID utility—when offered—never shares a cart with the core cheat. Open the pricing page when you need duration fine print (31-day monthly cadence, renewal rules, what happens when a seller pauses sales).`,
+        `Pick Cloud DMA only after you have read the Hyper-V guide; skipping that order costs more time than money. When you are ready to compare carts, use the plan carousel above or jump straight to pricing for the fee table. Deeper dives live on the ESP, aimbot, and Cloud DMA routes linked below—use them when a single paragraph here is not enough.`,
       ],
       bullets: [
-        'Player ESP and AI ESP',
-        'Player names, distance and health displays',
-        'Weapon type and inventory information',
-        'Skeletons, boxes, snaplines and head circles',
-        'Player and AI corpse information',
-        'Loot value and distance filters',
-        'Customizable visual settings',
-      ],
-    },
-    {
-      heading: 'Player ESP, AI ESP and Detailed Visual Information',
-      paragraphs: [
-        `Knowing what is happening around your current position is a major part of navigating Arena Breakout Infinite. The visual feature collection provides several ways to display player and AI information, allowing different elements to be identified through the available overlays.
-
-Player ESP includes options such as names, health bars, distance, weapon type, team index, view direction, skeletons, and snaplines. These displays can help organize the information visible on screen according to your preferred layout.`,
-        `AI ESP is available as a separate visual option, making it easier to distinguish the different types of activity represented by the interface. Additional controls include boxes, head circles, and inventory lists.`,
-      ],
-    },
-    {
-      heading: 'Loot ESP and Valuable Item Displays',
-      paragraphs: [
-        `Searching for valuable items is one of the defining parts of Arena Breakout Infinite. Loot ESP adds another layer of detail to that experience by providing information about items, containers, and their displayed values.
-
-Inventory price information and world visual options help make item-related information easier to review. Corpse ESP can also display price information, with settings for maximum distance and minimum value.`,
-        `Instead of treating every item as equally important, the available price and distance options let you focus on the information you want to see during a raid.`,
-      ],
-    },
-    {
-      heading: 'Aimbot Features and Customization',
-      paragraphs: [
-        `The aimbot section provides its own collection of configurable settings. These include Field of View, smoothness, speed, maximum distance, and target filtering.
-
-Additional options include visible checks, ignore-knocked settings, target lines, FOV displays, and custom mouse keybinds. Enable Akimbo is also included among the available options.`,
-        `Each setting serves a different purpose within the configuration interface. The available controls allow the aimbot setup to be adjusted rather than relying on a single fixed configuration.`,
-      ],
-    },
-    {
-      heading: 'System Requirements and Cloud DMA',
-      paragraphs: [
-        `The Arena Breakout Infinite product supports Windows 10 and Windows 11 configurations listed on the product requirements page. A compatible Intel or AMD processor and an NVIDIA or AMD graphics card are also required.`,
-        `The listed minimum memory requirement is 8 GB, with 16 GB recommended. The installation requires approximately 500 MB of available storage and a stable internet connection for authentication.`,
-        `HVCI, Core Isolation, TPM, and Secure Boot are listed as enabled requirements. Supported launcher options include the official Arena Breakout Launcher, Steam, Microsoft Store, and Epic Games.`,
-        `Cloud DMA is required for full functionality on supported builds. Review the dedicated Cloud DMA page for its Windows, Hyper-V, and additional service requirements.`,
-      ],
-    },
-    {
-      heading: 'Choose an Access Plan',
-      paragraphs: [
-        `The available Arena Breakout Infinite access options include monthly and lifetime durations. Monthly access is listed for 31 days, while the lifetime option provides unlimited-duration access under its listed terms.`,
-        `Review the individual plan details and the Cloud DMA requirements before selecting your preferred configuration. This makes it easier to understand the included access period and the complete setup associated with the product.`,
-      ],
-      bullets: [
-        'Monthly access: 31 days',
-        'Lifetime access: unlimited-duration plan',
-        'Cloud DMA required for full functionality on supported builds',
+        'Main cheat — $35 monthly or $150 lifetime',
+        'Cloud DMA infrastructure — $50 lifetime license',
+        'HWID utility — separate checkout when listed',
+        'Each product keeps its own secure payment link',
       ],
     },
   ],
   faqs: [
     {
       question: 'What features are included with Arena Breakout Infinite cheats?',
-      answer: `The available features include player ESP, AI ESP, loot and inventory information, corpse displays, visual customization, and configurable aimbot options. Individual settings include distance, health, weapon type, FOV, smoothness, speed, and target filters.`,
+      answer: `The seller listing groups player and AI ESP, loot and corpse readouts, weapon/recoil helpers, and a full aimbot tab with FOV, smoothing, filters, and keybinds. This homepage summarizes them; the ESP and aimbot guides carry the screenshot-by-screenshot detail.`,
     },
     {
       question: 'Does the ABI cheat include loot ESP?',
-      answer: `Yes. The visual options include inventory price information, player corpse ESP, AI corpse ESP, and configurable price and distance settings.`,
+      answer: `Yes. Inventory value overlays, corpse payout tags, and min-price filters are part of the visuals stack. Turn distance limits down when you are looting tight hallways so the overlay stays readable.`,
     },
     {
       question: 'Which Windows versions are supported?',
-      answer: `Windows 10 and Windows 11 versions listed on the product requirements page are supported. HVCI, Core Isolation, TPM, and Secure Boot must be enabled.`,
+      answer: `Plans target Windows 10 and 11 with HVCI, Core Isolation, TPM, and Secure Boot turned on. Match the seller’s CPU/GPU notes before you buy—laptops with disabled virtualization need fixing before Cloud DMA even enters the picture.`,
     },
     {
       question: 'Is Cloud DMA required for Arena Breakout Infinite?',
-      answer: `Cloud DMA is listed as required for full functionality on supported builds. It has its own setup and additional requirements, which are explained on the Cloud DMA page.`,
+      answer: `On supported builds, sellers mark Cloud DMA as required for the complete feature set. It is a standalone license with its own Hyper-V checklist, not a checkbox inside the cheat menu.`,
     },
     {
       question: 'What access durations are available?',
-      answer: `The listed options include monthly access for 31 days and a lifetime-duration plan. Refer to the pricing page for the current plan details.`,
+      answer: `You can choose a 31-day monthly pass or a lifetime cheat license, each with its own checkout URL. Cloud DMA stays on a separate $50 lifetime link even if you already own the main plan.`,
     },
   ],
   internalLinks: [
-    { text: 'Explore Arena Breakout Infinite ESP', href: '/arena-breakout-infinite-esp/' },
-    { text: 'Discover ABI aimbot features', href: '/arena-breakout-infinite-aimbot/' },
-    { text: 'View Arena Breakout Infinite pricing', href: '/arena-breakout-infinite-cheats-pricing/' },
-    { text: 'Learn about Cloud DMA', href: '/cloud-dma-for-arena-breakout-infinite/' },
+    { text: 'Deep dive: Arena Breakout Infinite ESP', href: '/arena-breakout-infinite-esp/' },
+    { text: 'Line-by-line aimbot settings', href: '/arena-breakout-infinite-aimbot/' },
+    { text: 'Compare monthly and lifetime pricing', href: '/arena-breakout-infinite-cheats-pricing/' },
+    { text: 'Cloud DMA license overview', href: '/cloud-dma-for-arena-breakout-infinite/' },
   ],
   cta: {
-    heading: 'Explore the Available ABI Features',
-    text:
-      'Take a closer look at the visual tools, customization options and access plans available for Arena Breakout Infinite.',
-    button: 'Explore Available Plans',
+    heading: 'Ready to compare plans?',
+    text: 'Jump to the plan carousel for checkout links, or open the pricing guide when you want the full fee breakdown first.',
+    button: 'View plan options',
     href: '#plans',
   },
 };

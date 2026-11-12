@@ -6,9 +6,9 @@ export const hwidSpooferPage: AbiPage = {
   publishNote:
     'Confirm exact Arena Breakout Infinite PC-client and current build compatibility before publishing.',
   seo: {
-    title: 'Arena Breakout Infinite HWID Spoofer | ABI',
+    title: 'Arena Breakout Infinite HWID Spoofer | PC Reset Tool',
     description:
-      'Explore HWID spoofing features, Windows requirements, hardware identifier options and the supported configuration for Arena Breakout.',
+      'HWID Spoofer for Arena Breakout Infinite PC: reset scope, Windows requirements, lifetime checkout pricing, and device limits enforced by the seller portal.',
   },
   h1: 'Arena Breakout Infinite HWID Spoofer',
   introduction: `Hardware identification is an important part of how a Windows system is recognized by software and services. An HWID spoofer provides a collection of tools designed to change selected hardware identifiers as part of a configured system setup.

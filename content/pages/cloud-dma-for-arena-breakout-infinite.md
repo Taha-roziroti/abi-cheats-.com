@@ -1,7 +1,7 @@
 ---
 route: /cloud-dma-for-arena-breakout-infinite/
-seoTitle: 'Cloud DMA for Arena Breakout Infinite | Setup'
-metaDescription: 'Explore Cloud DMA for Arena Breakout Infinite, including Hyper-V setup, Windows requirements, pricing and the additional services required.'
+seoTitle: 'Cloud DMA for Arena Breakout Infinite | ABI License'
+metaDescription: "Cloud DMA license for Arena Breakout Infinite: $50 lifetime, Hyper-V on one Windows PC, GREENWARD or server fees, and setup steps before cheat checkout."
 schemaTypes:
   - Product
   - Offer
