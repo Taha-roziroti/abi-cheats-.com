@@ -12,6 +12,8 @@ interface Props {
   readableTitle?: boolean;
   /** Keep left-aligned on large screens (e.g. home products). */
   flush?: boolean;
+  /** Scroll-reveal variant (below-fold sections only). */
+  motionReveal?: 'up' | 'left' | 'right' | 'scale' | '3d';
   class?: string;
 }
 
@@ -25,6 +27,7 @@ const {
   wide = false,
   readableTitle = false,
   flush = false,
+  motionReveal,
   class: className,
 } = Astro.props;
 const TitleTag = titleAs;
@@ -38,6 +41,7 @@ const TitleTag = titleAs;
     flush && 'section-header--flush',
     className,
   ]}
+  data-reveal={motionReveal}
 >
   <p class="section-header__eyebrow">{eyebrow}</p>
   <TitleTag

@@ -20,7 +20,7 @@ const { figures = [] } = Astro.props;
 if (figures.length === 0) return;
 ---
 
-<div class="not-prose my-10 grid gap-4 sm:grid-cols-2">
+<div class="not-prose my-10 grid gap-4 sm:grid-cols-2" data-reveal-stagger>
   {
     figures.map((figure) => {
       const hasSrc = Boolean(figure.src);

@@ -14,4 +14,6 @@ export declare function resolveCheckoutPathRedirect(
   search?: string,
 ): string | null;
 
+export declare function checkoutBridgeHtml(destination: string): string;
+
 export declare function checkoutRedirectLines(): string[];

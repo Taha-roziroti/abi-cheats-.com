@@ -9,7 +9,7 @@ import { PAGE_SEO } from '../src/config/pageSeo.ts';
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
 
-const SITE = 'https://bodycam-cheats.com';
+const SITE = 'https://abi-cheats.com';
 const LOCALES = ['en', 'en-US', 'x-default'];
 
 const ROUTES = [...new Set(Object.keys(PAGE_SEO).map((r) => (r.endsWith('/') ? r : `${r}/`)))];

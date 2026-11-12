@@ -3,23 +3,23 @@ import { LISTED_PRICES } from './site';
 import { MONTHLY_ACCESS_DAYS } from './productPricing';
 
 export const PUBLISHER_DISCLAIMER =
-  'Bodycam Cheats is an independent resource. It is not operated by, endorsed by, or affiliated with Reissad Studio or other Bodycam rights holders. Bodycam is referenced only to describe supported software.';
+  'ABI Cheats (abi-cheats.com) publishes PC setup guides, pricing summaries, and FAQ for Arena Breakout Infinite software.';
 
 export const FEATURE_TOOL_DISCLAIMER =
-  'This listing is a feature-based external tool (ESP, aimbot, radar, recoil options)—not a generic trainer. We do not claim undetected status or ban protection.';
+  'Listings describe seller-published ESP, aimbot, and related tools. We do not claim undetected status, zero ban risk, or official endorsement.';
 
 export const CLOUD_DMA_ADDITIONAL_SERVICES = [
   {
     name: 'GREENWARD',
-    summary: 'Separate activation and routing service required for Cloud DMA (purchased outside the license).',
+    summary: 'Separate activation and routing service required for Cloud DMA when named on the seller listing.',
   },
   {
     name: 'Static Server',
-    summary: 'Dedicated server component with its own fee—not included in the Cloud DMA license.',
+    summary: 'Dedicated server component with its own fee when required by the seller.',
   },
   {
     name: 'AWS',
-    summary: 'Cloud resources with separate billing—not included in the $50 license.',
+    summary: 'Cloud resources with separate billing when listed outside the base Cloud DMA license.',
   },
 ] as const;
 
@@ -29,19 +29,19 @@ export const HWID_SPOOFER_CHECKOUT = checkoutPath('hwidSpoofer');
 
 export const mainProductOffers = [
   {
-    name: 'Bodycam Cheats — Monthly',
+    name: 'Arena Breakout Infinite Cheats — Monthly',
     priceUsd: LISTED_PRICES.monthlyUsd,
     url: MAIN_PRODUCT_CHECKOUT,
   },
   {
-    name: 'Bodycam Cheats — Lifetime',
+    name: 'Arena Breakout Infinite Cheats — Lifetime',
     priceUsd: LISTED_PRICES.lifetimeUsd,
     url: MAIN_PRODUCT_CHECKOUT,
   },
 ] as const;
 
 export const cloudDmaOffer = {
-  name: 'Cloud DMA infrastructure license (lifetime)',
+  name: 'Cloud DMA for Arena Breakout Infinite (lifetime)',
   priceUsd: LISTED_PRICES.cloudDmaLifetimeUsd,
   url: CLOUD_DMA_CHECKOUT,
 } as const;
@@ -53,26 +53,25 @@ export const hwidSpooferOffer = {
 } as const;
 
 export const mainProductFeatures = [
-  'Player ESP, box ESP, skeleton and snaplines',
-  'Aimbot with FOV, target zones, silent aim and aim line',
-  'Player chams, weapon chams, nicknames, health and distance',
-  'Drone and bomb ESP where listed',
-  'Recoil control, stream-proof overlay and radar options',
-  'In-game menu with saveable configs',
+  'Seller-listed ESP and aimbot modules (update from listing)',
+  'Monthly and lifetime plan options',
+  'Windows PC client per seller documentation',
+  'Cloud DMA prerequisite on supported builds',
+  'Secure checkout via external partner',
+  'Independent setup and FAQ guides on this site',
 ] as const;
 
 export const mainProductClientRequirements = [
-  'Supported client: Bodycam on Windows PC',
-  'Windows 10 or Windows 11 (64-bit)',
-  'Minimum 8 GB RAM; dedicated GPU recommended',
-  'HVCI, Core Isolation, TPM and Secure Boot as required for supported builds',
-  'Cloud DMA environment required for full functionality on supported builds',
+  'Supported client: Arena Breakout Infinite on Windows PC per seller',
+  'Windows 10 or Windows 11 (64-bit) when listed',
+  'RAM, GPU, and security settings per seller checklist',
+  'Cloud DMA environment when required for full functionality',
 ] as const;
 
 export const cloudDmaRequirements = [
   'Windows 10 or Windows 11 64-bit with Hyper-V capable edition',
   'CPU virtualization enabled in firmware and Windows',
-  'Minimum 8 GB RAM; 16 GB recommended for the Hyper-V guest',
+  'RAM guidance per seller (16 GB recommended for guest workloads)',
   'Stable internet connection',
   'Secure Boot and Core Isolation compatible with Hyper-V setup',
 ] as const;
@@ -80,12 +79,11 @@ export const cloudDmaRequirements = [
 export const monthlyPlanCopy = {
   priceUsd: LISTED_PRICES.monthlyUsd,
   durationLabel: `${MONTHLY_ACCESS_DAYS}-day access`,
-  renewal:
-    'Each monthly payment extends access for another 30-day period from activation or renewal per checkout terms.',
+  renewal: 'Each monthly payment extends access per seller checkout terms.',
 } as const;
 
 export const lifetimePlanCopy = {
   priceUsd: LISTED_PRICES.lifetimeUsd,
   durationLabel: 'Lifetime access',
-  renewal: 'One-time payment for ongoing access while the Bodycam listing remains available.',
+  renewal: 'One-time payment for ongoing access while the seller listing remains available.',
 } as const;

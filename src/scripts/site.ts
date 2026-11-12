@@ -39,6 +39,26 @@ function initNavHighlight() {
   });
 }
 
+function smoothScrollTo(target: HTMLElement, options?: { focus?: boolean }) {
+  const lenis = window.__abiLenis;
+  if (lenis) {
+    lenis.scrollTo(target, { offset: -96, duration: 1.1 });
+    if (options?.focus) {
+      window.setTimeout(() => {
+        target.setAttribute('tabindex', '-1');
+        target.focus({ preventScroll: true });
+      }, 400);
+    }
+    return;
+  }
+
+  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  if (options?.focus) {
+    target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: false });
+  }
+}
+
 function initInPageScroll() {
   document.querySelectorAll<HTMLElement>('[data-scroll-target]').forEach((el) => {
     el.addEventListener('click', (event) => {
@@ -49,20 +69,19 @@ function initInPageScroll() {
       if (!target) return;
 
       event.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      smoothScrollTo(target);
     });
   });
 }
 
 function initSkipLink() {
   document.querySelectorAll<HTMLElement>('[data-skip-to-main]').forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
       const main = document.getElementById('main-content');
       if (!main) return;
 
-      main.setAttribute('tabindex', '-1');
-      main.focus({ preventScroll: false });
-      main.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      event.preventDefault();
+      smoothScrollTo(main, { focus: true });
     });
   });
 }

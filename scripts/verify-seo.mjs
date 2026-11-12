@@ -1,17 +1,23 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SITE_HOST = 'bodycam-cheats.com';
+const SITE_HOST = 'abi-cheats.com';
 const SITE_URL = `https://${SITE_HOST}`;
 
 const INDEXABLE_MONEY_ROUTES = [
   '/',
-  '/bodycam-aimbot/',
-  '/bodycam-esp/',
-  '/bodycam-cheats-price/',
-  '/bodycam-requirements/',
-  '/cloud-dma-for-bodycam/',
+  '/arena-breakout-infinite-esp/',
+  '/arena-breakout-infinite-aimbot/',
+  '/arena-breakout-infinite-cheats-pricing/',
+  '/cloud-dma-for-arena-breakout-infinite/',
 ];
+
+const FAQ_PAGE_ALLOWED = new Set([
+  '/arena-breakout-infinite-esp/',
+  '/arena-breakout-infinite-aimbot/',
+  '/arena-breakout-infinite-cheats-pricing/',
+  '/cloud-dma-for-arena-breakout-infinite/',
+]);
 
 const dist = path.join(process.cwd(), 'dist');
 const errors = [];
@@ -83,7 +89,11 @@ function checkPage(route) {
   }
 
   if (html.includes('FAQPage')) {
-    errors.push(`${route}: FAQPage JSON-LD must not appear on money pages (only /faq/)`);
+    if (route === '/' || route === '/faq/') {
+      errors.push(`${route}: FAQPage JSON-LD must not appear on this route`);
+    } else if (!FAQ_PAGE_ALLOWED.has(route)) {
+      errors.push(`${route}: unexpected FAQPage JSON-LD`);
+    }
   }
 
   if (!html.includes('"@type":"Organization"') && !html.includes('"@type": "Organization"')) {

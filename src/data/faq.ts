@@ -32,9 +32,9 @@ function link(text: string, href: string): string {
   return `<a href="${normalizeInternalPath(href)}">${text}</a>`;
 }
 
-const cloudDmaPage = link('Cloud DMA for Bodycam', '/cloud-dma-for-bodycam/');
-const requirementsGuide = link('Bodycam system requirements guide', '/bodycam-requirements/');
-const pricingPage = link('Bodycam cheats price page', '/bodycam-cheats-price/');
+const cloudDmaPage = link('Cloud DMA for Arena Breakout Infinite', '/cloud-dma-for-arena-breakout-infinite/');
+const requirementsGuide = link('ABI requirements on the homepage', '/');
+const pricingPage = link('Arena Breakout Infinite cheats price', '/arena-breakout-infinite-cheats-pricing/');
 const setupGuide = link('Hyper-V Cloud DMA setup walkthrough', '/guides/cloud-dma-setup/');
 const checkout = link('secure checkout', PRIMARY_CHECKOUT_PATH);
 const faqPage = link('full FAQ topic list', ROUTES.faq);
@@ -53,15 +53,15 @@ export const siteFaqs: SiteFaqItem[] = [
     id: 'features',
     topic: 'esp',
     icon: 'faqWhatIsEsp',
-    q: 'What features are included with Bodycam cheats?',
-    a: `Aimbot, ESP, chams, movement, and weapon modules are broken down on the homepage and on the dedicated ${link('Bodycam aimbot guide', '/bodycam-aimbot/')} and ${link('Bodycam ESP guide', '/bodycam-esp/')}—this FAQ stays high level so we do not repeat the full feature matrix here.`,
+    q: 'What features are included with Main product?',
+    a: `Aimbot, ESP, and related modules are summarized on the homepage and on the dedicated ${link('Arena Breakout Infinite aimbot', '/arena-breakout-infinite-aimbot/')} and ${link('Arena Breakout Infinite ESP', '/arena-breakout-infinite-esp/')} pages—this FAQ stays high level.`,
   },
   {
     id: 'after-buy',
     topic: 'setup',
     icon: 'faqAfterBuy',
     q: 'What happens after I buy?',
-    a: `Checkout runs through our secure partner. After purchase, follow delivery instructions from your order email and review the ${link('Bodycam post-purchase Cloud DMA steps', '/guides/cloud-dma-setup/')} before launching the game.`,
+    a: `Checkout runs through our secure partner. After purchase, follow delivery instructions from your order email and review the ${link('post-purchase Cloud DMA steps', '/guides/cloud-dma-setup/')} before launching the game.`,
   },
   {
     id: 'ban-risk',
@@ -78,7 +78,7 @@ export const siteFaqs: SiteFaqItem[] = [
     icon: 'faqPlatforms',
     q: 'Which platforms are supported?',
     a: a(
-      'Bodycam cheats list Windows 10 and Windows 11 with a dedicated GPU. macOS and Linux are not supported.',
+      'Main product list Windows 10 and Windows 11 with a dedicated GPU. macOS and Linux are not supported.',
     ),
   },
   {
@@ -95,14 +95,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'plans',
     icon: 'faqComparePlans',
     q: 'Can I choose between monthly and lifetime access?',
-    a: `Yes. Compare monthly and lifetime Bodycam plans on the ${pricingPage}.`,
+    a: `Yes. Compare monthly and lifetime ABI cheat plans on the ${pricingPage}.`,
   },
   {
     id: 'plan-prices',
     topic: 'plans',
     icon: 'faqRankTiers',
-    q: 'How much do Bodycam cheat plans cost?',
-    a: `Monthly and lifetime prices are listed on the ${link('cheat plan pricing table', '/bodycam-cheats-price/')}. Cloud DMA is a separate lifetime license on the ${link('$50 Cloud DMA license page', '/cloud-dma-for-bodycam/')}.`,
+    q: 'How much do Main product plans cost?',
+    a: `Monthly and lifetime prices are listed on the ${link('cheat plan pricing table', '/arena-breakout-infinite-cheats-pricing/')}. Cloud DMA is a separate lifetime license on the ${link('Cloud DMA product page', '/cloud-dma-for-arena-breakout-infinite/')}.`,
   },
   {
     id: 'cloud-dma',
@@ -116,14 +116,14 @@ export const siteFaqs: SiteFaqItem[] = [
     topic: 'products',
     icon: 'faqUgcWhat',
     q: 'What does Cloud DMA cost beyond the cheat license?',
-    a: `The Cloud DMA lifetime license is listed on the ${link('Cloud DMA pricing overview', '/cloud-dma-for-bodycam/')}. GREENWARD, static server hosting, and AWS resources are purchased separately.`,
+    a: `The Cloud DMA lifetime license is listed on the ${link('Cloud DMA pricing overview', '/cloud-dma-for-arena-breakout-infinite/')}. GREENWARD, static server hosting, and AWS resources are purchased separately when named on the listing.`,
   },
   {
     id: 'hwid-spoofer',
     topic: 'products',
     icon: 'faqProductsPage',
     q: 'What does the HWID Spoofer change?',
-    a: `It targets common hardware identifiers used in ban workflows. Read the ${link('HWID Spoofer product page', '/hwid-spoofer/')} for scope, limits, and setup before checkout.`,
+    a: `It targets common hardware identifiers used in ban workflows. Read the ${link('HWID Spoofer product page', '/arena-breakout-infinite-hwid-spoofer/')} for scope, limits, and setup before checkout.`,
   },
   {
     id: 'windows-req',
@@ -176,15 +176,6 @@ export const siteFaqs: SiteFaqItem[] = [
     a: `Use the ${checkout} flow for purchase questions, then contact support@${SITE_DOMAIN} with your order email, Windows version, and any loader error text.`,
   },
   {
-    id: 'publisher',
-    topic: 'safety',
-    icon: 'faqPrivateCheats',
-    q: 'Are you affiliated with Reissad Studio or Bodycam publishers?',
-    a: a(
-      'No. Bodycam Cheats is independent and uses the game name only to describe supported software.',
-    ),
-  },
-  {
     id: 'faq-more',
     topic: 'all',
     icon: 'faqMore',
@@ -198,8 +189,8 @@ export function getLandingFaqs(): SiteFaqItem[] {
 }
 
 export function getContentPageFaqs(route: string): SiteFaqItem[] | null {
-  const bodycam = bodycamPageFaqsByRoute[route];
-  if (bodycam?.length) return bodycam;
+  const pageFaqs = bodycamPageFaqsByRoute[route];
+  if (pageFaqs?.length) return pageFaqs;
   return null;
 }
 
@@ -225,7 +216,7 @@ export const SITE_FAQ_FILTER_TOPICS: FaqTopic[] = [
 ];
 
 export const HOME_LANDING_FAQ_SECTION_COPY = {
-  eyebrow: 'Bodycam FAQ',
+  eyebrow: 'ABI FAQ',
   title: 'Frequently asked questions',
   subtitle:
     'Pricing, Windows requirements, Cloud DMA and checkout—open the full FAQ for every topic.',

@@ -14,7 +14,10 @@
     "start": "node scripts/serve.mjs",
     "astro": "astro",
     "optimize:images": "node scripts/optimize-images.mjs",
-    "audit": "node scripts/seo-audit.mjs"
+    "audit": "node scripts/seo-audit.mjs",
+    "audit:hreflang": "node --experimental-transform-types scripts/audit-hreflang.mjs",
+    "audit:images": "node --experimental-transform-types scripts/audit-images.mjs",
+    "sync:abi": "node --experimental-transform-types scripts/sync-abi-content.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
@@ -25,6 +28,8 @@
     "@tailwindcss/vite": "^4.3.3",
     "astro": "^7.1.1",
     "embla-carousel-autoplay": "^8.6.0",
+    "gsap": "^3.15.1",
+    "lenis": "^1.3.27",
     "sharp": "^0.34.3",
     "tailwind-merge": "^3.7.0",
     "tailwind-variants": "^3.3.1",

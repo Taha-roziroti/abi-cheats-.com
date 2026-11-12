@@ -1,4 +1,5 @@
-import { checkoutPath } from '../config/checkout';
+import { ABI_ROUTES } from '../config/routes';
+import { CHECKOUT_HUB_PATH, checkoutPath } from '../config/checkout';
 import { checkoutHrefForProduct, lockedCheckoutProduct } from './checkoutContext';
 import {
   MAIN_PRODUCT_CHECKOUT,
@@ -11,36 +12,37 @@ import { BODYCAM_HERO } from '../data/placeholders';
 import { LISTED_PRICES, PRODUCT_ID, SITE_URL } from '../data/site';
 import {
   breadcrumbSchema,
+  faqPageSchema,
   guideArticleSchema,
   productSchema,
   webPageSchema,
   type BreadcrumbItem,
 } from './schema';
 
-const HOME_CRUMB: BreadcrumbItem = { name: 'Bodycam cheats home', path: '/' };
+const HOME_CRUMB: BreadcrumbItem = { name: 'ABI cheats home', path: '/' };
 
 export function breadcrumbsForRoute(route: string): BreadcrumbItem[] {
-  if (route === '/') return [HOME_CRUMB];
-  if (route === '/bodycam-cheats-price/') {
-    return [HOME_CRUMB, { name: 'Bodycam monthly and lifetime pricing', path: '/bodycam-cheats-price/' }];
+  if (route === ABI_ROUTES.home) return [HOME_CRUMB];
+  if (route === ABI_ROUTES.pricing) {
+    return [HOME_CRUMB, { name: 'Arena Breakout Infinite cheats price', path: ABI_ROUTES.pricing }];
   }
-  if (route === '/bodycam-aimbot/') {
-    return [HOME_CRUMB, { name: 'Bodycam aimbot features', path: '/bodycam-aimbot/' }];
+  if (route === ABI_ROUTES.aimbot) {
+    return [HOME_CRUMB, { name: 'Arena Breakout Infinite aimbot', path: ABI_ROUTES.aimbot }];
   }
-  if (route === '/bodycam-esp/') {
-    return [HOME_CRUMB, { name: 'Bodycam ESP and wallhack', path: '/bodycam-esp/' }];
+  if (route === ABI_ROUTES.esp) {
+    return [HOME_CRUMB, { name: 'Arena Breakout Infinite ESP', path: ABI_ROUTES.esp }];
   }
-  if (route === '/bodycam-requirements/') {
-    return [HOME_CRUMB, { name: 'Bodycam system requirements', path: '/bodycam-requirements/' }];
+  if (route === ABI_ROUTES.cloudDma) {
+    return [HOME_CRUMB, { name: 'Cloud DMA for Arena Breakout Infinite', path: ABI_ROUTES.cloudDma }];
   }
-  if (route === '/cloud-dma-for-bodycam/') {
-    return [HOME_CRUMB, { name: 'Cloud DMA for Bodycam license', path: '/cloud-dma-for-bodycam/' }];
+  if (route === ABI_ROUTES.hwidSpoofer) {
+    return [HOME_CRUMB, { name: 'Arena Breakout Infinite HWID spoofer', path: ABI_ROUTES.hwidSpoofer }];
   }
-  if (route === '/guides/cloud-dma-setup/') {
+  if (route === ABI_ROUTES.cloudDmaSetup) {
     return [
       HOME_CRUMB,
-      { name: 'Cloud DMA for Bodycam overview', path: '/cloud-dma-for-bodycam/' },
-      { name: 'Hyper-V setup walkthrough', path: '/guides/cloud-dma-setup/' },
+      { name: 'Cloud DMA for Arena Breakout Infinite', path: ABI_ROUTES.cloudDma },
+      { name: 'Hyper-V setup walkthrough', path: ABI_ROUTES.cloudDmaSetup },
     ];
   }
   return [HOME_CRUMB];
@@ -48,17 +50,13 @@ export function breadcrumbsForRoute(route: string): BreadcrumbItem[] {
 
 function productSchemaImage(route: string): string {
   switch (route) {
-    case '/':
+    case ABI_ROUTES.home:
       return BODYCAM_HERO;
-    case '/bodycam-cheats-price/':
-      return BODYCAM_IMAGES.espWarehouse.src;
-    case '/bodycam-aimbot/':
-      return BODYCAM_IMAGES.menuAimbot.src;
-    case '/bodycam-esp/':
+    case ABI_ROUTES.aimbot:
+      return BODYCAM_IMAGES.menuWeapon.src;
+    case ABI_ROUTES.esp:
       return BODYCAM_IMAGES.menuVisuals.src;
-    case '/bodycam-requirements/':
-      return BODYCAM_IMAGES.povHallway.src;
-    case '/cloud-dma-for-bodycam/':
+    case ABI_ROUTES.cloudDma:
       return BODYCAM_IMAGES.hero.src;
     default:
       return BODYCAM_HERO;
@@ -71,33 +69,34 @@ export function jsonLdForContentPage(input: {
   metaDescription: string;
   schemaTypes: string[];
   articlePublished?: string;
+  faqItems?: { q: string; a: string }[];
 }): Record<string, unknown>[] {
   const breadcrumbs = breadcrumbsForRoute(input.route);
   const blocks: Record<string, unknown>[] = [];
 
   if (input.schemaTypes.includes('Product')) {
-    if (input.route === '/' || input.route === '/bodycam-cheats-price/') {
+    if (input.route === ABI_ROUTES.home) {
       blocks.push(
         productSchema({
-          name: 'Bodycam Cheats for PC',
+          name: 'Arena Breakout Infinite Cheats for PC',
           description: input.metaDescription,
           url: input.route,
           offerUrl: MAIN_PRODUCT_CHECKOUT,
-          sku: 'bodycam-cheats',
+          sku: 'arena-breakout-infinite-cheats',
           image: productSchemaImage(input.route),
-          productId: input.route === '/' ? PRODUCT_ID : `${SITE_URL}/bodycam-cheats-price/#product`,
+          productId: PRODUCT_ID,
           offers: [...mainProductOffers],
         }),
       );
-    } else if (input.route === '/cloud-dma-for-bodycam/') {
+    } else if (input.route === ABI_ROUTES.cloudDma) {
       blocks.push(
         productSchema({
-          name: 'Cloud DMA for Bodycam',
+          name: 'Cloud DMA for Arena Breakout Infinite',
           description: input.metaDescription,
-          url: '/cloud-dma-for-bodycam/',
+          url: ABI_ROUTES.cloudDma,
           offerUrl: CLOUD_DMA_CHECKOUT,
           sku: 'cloud-dma-license',
-          productId: `${SITE_URL}/cloud-dma-for-bodycam/#product`,
+          productId: `${SITE_URL}${ABI_ROUTES.cloudDma}#product`,
           offers: [
             {
               name: cloudDmaOffer.name,
@@ -110,11 +109,11 @@ export function jsonLdForContentPage(input: {
     }
   }
 
-  if (input.schemaTypes.includes('Offer') && input.route === '/') {
+  if (input.schemaTypes.includes('Offer') && input.route === ABI_ROUTES.home) {
     blocks.push({
       '@context': 'https://schema.org',
       '@type': 'Offer',
-      name: 'Bodycam Cheats Monthly',
+      name: 'Arena Breakout Infinite Cheats — Monthly',
       price: LISTED_PRICES.monthlyUsd.toFixed(2),
       priceCurrency: 'USD',
       url: MAIN_PRODUCT_CHECKOUT,
@@ -147,19 +146,26 @@ export function jsonLdForContentPage(input: {
     blocks.push(breadcrumbSchema(breadcrumbs));
   }
 
+  if (input.schemaTypes.includes('FAQPage') && input.faqItems?.length) {
+    blocks.push(
+      faqPageSchema(
+        input.faqItems.map((item, index) => ({
+          num: String(index + 1).padStart(2, '0'),
+          q: item.q,
+          a: item.a,
+        })),
+      ),
+    );
+  }
+
   return blocks;
 }
 
 export function defaultEndCtaHref(
   route: string,
-  checkout?: 'main-product' | 'cloud-dma' | 'hwid-spoofer',
+  _checkout?: 'main-product' | 'cloud-dma' | 'hwid-spoofer',
 ): string {
-  if (checkout === 'cloud-dma') return checkoutPath('cloudDma');
-  if (checkout === 'hwid-spoofer') return checkoutPath('hwidSpoofer');
-  if (checkout === 'main-product') return checkoutPath('mainProduct');
-
   const locked = lockedCheckoutProduct(route);
   if (locked) return checkoutHrefForProduct(locked);
-
-  return checkoutPath('mainProduct');
+  return CHECKOUT_HUB_PATH;
 }

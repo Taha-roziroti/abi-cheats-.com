@@ -29,6 +29,7 @@ const pages = defineCollection({
         }),
       )
       .optional(),
+    noindex: z.boolean().optional(),
   }),
 });
 

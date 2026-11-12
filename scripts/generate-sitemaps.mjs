@@ -1,44 +1,35 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const SITE_HOST = 'bodycam-cheats.com';
+const SITE_HOST = 'abi-cheats.com';
 const SITE_URL = `https://${SITE_HOST}`;
+const ABI = (file) => `${SITE_URL}/images/abi/${file}`;
 
 /** Keep in sync with src/data/site.ts SITEMAP_IMAGES */
 const SITEMAP_IMAGES = {
   '/': [
-    {
-      loc: `${SITE_URL}/images/bodycam/bodycam-hero.webp`,
-      title: 'Bodycam cheats hero — tactical bodycam operators',
-    },
-    {
-      loc: `${SITE_URL}/images/bodycam/bodycam-esp-indoor-cyan.webp`,
-      title: 'Bodycam ESP with cyan player boxes indoors',
-    },
+    { loc: ABI('abi-hero.webp'), title: 'Arena Breakout Infinite gameplay with ESP and aimbot overlays' },
+    { loc: ABI('abi-esp-wallhack.webp'), title: 'Arena Breakout Infinite ESP wallhack screenshot' },
   ],
-  '/bodycam-cheats-price/': [
-    { loc: `${SITE_URL}/og/pricing.jpg`, title: 'Bodycam cheats pricing plans' },
-    { loc: `${SITE_URL}/images/bodycam/bodycam-esp-warehouse.webp`, title: 'Bodycam ESP warehouse gameplay' },
+  '/arena-breakout-infinite-cheats-pricing/': [
+    { loc: `${SITE_URL}/og/pricing.jpg`, title: 'Arena Breakout Infinite cheat pricing' },
+    { loc: ABI('abi-menu-visuals.webp'), title: 'Arena Breakout Infinite cheat Visuals menu' },
   ],
-  '/bodycam-aimbot/': [
-    { loc: `${SITE_URL}/images/bodycam/bodycam-menu-aimbot.webp`, title: 'Bodycam aimbot menu settings' },
-    { loc: `${SITE_URL}/images/bodycam/bodycam-aimbot-fov-snapline.webp`, title: 'Bodycam aimbot FOV and snapline' },
+  '/arena-breakout-infinite-aimbot/': [
+    { loc: ABI('abi-menu-weapon.webp'), title: 'Arena Breakout Infinite weapon recoil menu' },
+    { loc: ABI('abi-aimbot-fov.webp'), title: 'Arena Breakout Infinite aimbot FOV screenshot' },
   ],
-  '/bodycam-esp/': [
-    { loc: `${SITE_URL}/images/bodycam/bodycam-menu-visuals.webp`, title: 'Bodycam Visuals ESP menu' },
-    { loc: `${SITE_URL}/images/bodycam/bodycam-esp-forest-cyan.webp`, title: 'Bodycam skeleton ESP outdoors' },
+  '/arena-breakout-infinite-esp/': [
+    { loc: ABI('abi-menu-visuals.webp'), title: 'Arena Breakout Infinite cheat Visuals menu' },
+    { loc: ABI('abi-esp-rooftop.webp'), title: 'Arena Breakout Infinite rooftop ESP screenshot' },
   ],
-  '/bodycam-requirements/': [
-    { loc: `${SITE_URL}/images/bodycam/bodycam-pov-hallway.webp`, title: 'Bodycam in-game bodycam POV' },
-    { loc: `${SITE_URL}/images/bodycam/bodycam-esp-scope.webp`, title: 'Bodycam scoped ESP overlay' },
-  ],
-  '/cloud-dma-for-bodycam/': [
-    { loc: `${SITE_URL}/og/cloud-dma.jpg`, title: 'Cloud DMA for Bodycam' },
-    { loc: `${SITE_URL}/images/bodycam/bodycam-hero.webp`, title: 'Bodycam product overview' },
+  '/cloud-dma-for-arena-breakout-infinite/': [
+    { loc: `${SITE_URL}/og/cloud-dma.jpg`, title: 'Cloud DMA for Arena Breakout Infinite' },
+    { loc: ABI('abi-hero.webp'), title: 'Arena Breakout Infinite gameplay hero' },
   ],
   '/guides/cloud-dma-setup/': [
-    { loc: `${SITE_URL}/og/cloud-dma-setup.jpg`, title: 'Cloud DMA Hyper-V setup guide' },
-    { loc: `${SITE_URL}/images/bodycam/bodycam-pov-hallway.webp`, title: 'Bodycam tactical POV reference' },
+    { loc: `${SITE_URL}/og/cloud-dma-setup.jpg`, title: 'Cloud DMA setup guide' },
+    { loc: ABI('abi-esp-loot-corridor.webp'), title: 'Arena Breakout Infinite loot ESP corridor' },
   ],
 };
 

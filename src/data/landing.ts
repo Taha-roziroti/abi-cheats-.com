@@ -1,7 +1,8 @@
 import type { ProductSlide } from './products';
+import { ABI_ROUTES } from '../config/routes';
 import { MAIN_PRODUCT_CHECKOUT, CLOUD_DMA_CHECKOUT } from './productSite';
 import type { IconName } from '../components/icons/types';
-import { BODYCAM_IMAGES } from './bodycamImages';
+import { ABI_IMAGES } from './abiImages';
 
 export interface LandingCatalogProduct {
   slug: string;
@@ -20,93 +21,93 @@ export interface LandingCatalogProduct {
 
 export const landingHeroSlides: ProductSlide[] = [
   {
-    src: BODYCAM_IMAGES.hero.src,
-    alt: BODYCAM_IMAGES.hero.alt,
-    caption: 'Bodycam',
-    captionDesc: 'Tactical bodycam branding for the PC cheat package.',
+    src: ABI_IMAGES.hero.src,
+    alt: ABI_IMAGES.hero.alt,
+    caption: 'ESP & aimbot in-raid',
+    captionDesc: 'Player skeleton ESP, loot tags and FOV targeting in Arena Breakout Infinite.',
   },
   {
-    src: BODYCAM_IMAGES.espIndoorCyan.src,
-    alt: BODYCAM_IMAGES.espIndoorCyan.alt,
-    caption: 'Player ESP',
-    captionDesc: 'Cyan boxes, skeletons, and distance tags.',
+    src: ABI_IMAGES.espIndoorWallhack.src,
+    alt: ABI_IMAGES.espIndoorWallhack.alt,
+    caption: 'Wallhack & player ESP',
+    captionDesc: 'Skeleton overlays and enemy information through interior cover.',
   },
   {
-    src: BODYCAM_IMAGES.menuAimbot.src,
-    alt: BODYCAM_IMAGES.menuAimbot.alt,
-    caption: 'Aimbot',
-    captionDesc: 'FOV, smoothing, bones and recoil options.',
-  },
-  {
-    src: BODYCAM_IMAGES.espForestCyan.src,
-    alt: BODYCAM_IMAGES.espForestCyan.alt,
-    caption: 'Skeleton ESP',
-    captionDesc: 'Snaplines and skeleton readouts outdoors.',
-  },
-  {
-    src: BODYCAM_IMAGES.menuVisuals.src,
-    alt: BODYCAM_IMAGES.menuVisuals.alt,
+    src: ABI_IMAGES.menuVisuals.src,
+    alt: ABI_IMAGES.menuVisuals.alt,
     caption: 'Visuals menu',
-    captionDesc: 'Radar, box type, health and team toggles.',
+    captionDesc: 'Player ESP, bot ESP, loot filters and skeleton toggles.',
   },
   {
-    src: BODYCAM_IMAGES.aimbotFovSnapline.src,
-    alt: BODYCAM_IMAGES.aimbotFovSnapline.alt,
-    caption: 'FOV & snapline',
-    captionDesc: 'Aim circle with tracking line to target.',
+    src: ABI_IMAGES.menuWeapon.src,
+    alt: ABI_IMAGES.menuWeapon.alt,
+    caption: 'Recoil & weapon control',
+    captionDesc: 'Weapon tab with recoil strength and sway options.',
+  },
+  {
+    src: ABI_IMAGES.espLootCorridor.src,
+    alt: ABI_IMAGES.espLootCorridor.alt,
+    caption: 'Loot & distance ESP',
+    captionDesc: 'Player and item distance readouts in raid environments.',
+  },
+  {
+    src: ABI_IMAGES.aimbotScope.src,
+    alt: ABI_IMAGES.aimbotScope.alt,
+    caption: 'Scoped aimbot view',
+    captionDesc: 'Long-range skeleton ESP through magnified optics.',
   },
 ];
 
 export const landingProducts: LandingCatalogProduct[] = [
   {
-    slug: 'bodycam',
+    slug: 'abi',
     label: 'Main plan',
-    title: 'Bodycam Cheats',
-    href: '/bodycam-cheats-price/',
+    title: 'Arena Breakout Infinite Cheats',
+    href: ABI_ROUTES.pricing,
     buyUrl: MAIN_PRODUCT_CHECKOUT,
     variant: 'popular',
     icon: 'coreProduct',
-    features: ['ESP & aimbot', 'Chams & radar', 'Recoil options', 'Saveable configs'],
-    more: 3,
-    buyLabel: 'Checkout Bodycam plan',
+    features: ['ESP & aimbot (per listing)', 'Plan options', 'Windows PC', 'Seller-updated features'],
+    more: 2,
+    buyLabel: 'Review ABI plans',
     viewLabel: 'Monthly vs lifetime pricing',
   },
   {
     slug: 'cloud-dma',
     label: 'Infrastructure',
-    title: 'Cloud DMA for Bodycam',
-    href: '/cloud-dma-for-bodycam/',
+    title: 'Cloud DMA for ABI',
+    href: ABI_ROUTES.cloudDma,
     buyUrl: CLOUD_DMA_CHECKOUT,
-    badge: 'Required stack',
+    badge: 'Listed prerequisite',
     variant: 'essential',
     icon: 'reqCpu',
-    features: ['Hyper-V single-PC', 'Windows 10 & 11', 'Lifetime $50 license', 'Add-ons priced separately'],
+    features: ['Hyper-V single-PC', 'Separate license', 'Add-ons priced separately', 'Setup walkthrough'],
     more: 1,
-    buyLabel: 'Buy Cloud DMA license',
-    viewLabel: 'Read Cloud DMA requirements',
+    buyLabel: 'View Cloud DMA license',
+    viewLabel: 'Read Cloud DMA overview',
   },
 ];
 
 export const landingGuideCards = [
   {
-    title: 'Bodycam cheats price',
-    desc: 'Compare $35 monthly and $150 lifetime access before checkout.',
-    href: '/bodycam-cheats-price/',
+    title: 'ABI cheats price',
+    desc: 'Compare monthly and lifetime Arena Breakout Infinite cheat plans.',
+    href: ABI_ROUTES.pricing,
     readLabel: 'View pricing',
-    image: BODYCAM_IMAGES.espWarehouse,
+    image: ABI_IMAGES.menuVisuals,
   },
   {
-    title: 'Aimbot features',
-    desc: 'FOV, silent aim, target zones and weapon options.',
-    href: '/bodycam-aimbot/',
+    title: 'Arena Breakout Infinite aimbot',
+    desc: 'FOV, smoothing, filters, and keybind options.',
+    href: ABI_ROUTES.aimbot,
     readLabel: 'Aimbot guide',
-    image: BODYCAM_IMAGES.aimbotFovSnapline,
+    image: ABI_IMAGES.aimbotFovOutdoor,
   },
   {
-    title: 'System requirements',
-    desc: 'Windows 10/11, GPU, HVCI, TPM, Secure Boot and Cloud DMA.',
-    href: '/bodycam-requirements/',
-    readLabel: 'Requirements',
-    image: BODYCAM_IMAGES.povHallway,
+    title: 'Arena Breakout Infinite ESP',
+    desc: 'Player, AI, and loot ESP in one guide.',
+    href: ABI_ROUTES.esp,
+    readLabel: 'ESP guide',
+    image: ABI_IMAGES.espRooftop,
   },
 ];

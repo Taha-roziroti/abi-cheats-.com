@@ -15,8 +15,9 @@ const warnings = [];
 
 const INDEXABLE = [...new Set(Object.keys(PAGE_SEO).map((r) => (r.endsWith('/') ? r : `${r}/`)))];
 
+/** ABI money pages use multiple feature sections (synced from abi-pages). */
 const MIN_WORDS_PER_H2 = 70;
-const WORDS_PER_H2_BUDGET = 220;
+const WORDS_PER_H2_BUDGET = 100;
 const MIN_WORDS_PER_H3 = 40;
 
 function htmlPath(route) {
@@ -49,6 +50,11 @@ function contentPageRouteByFile(file) {
   const route = raw.match(/^route:\s*(\S+)/m)?.[1];
   if (!route) return null;
   return route.endsWith('/') ? route : `${route}/`;
+}
+
+function isDraftNoindex(file) {
+  const raw = fs.readFileSync(path.join(pagesDir, file), 'utf8');
+  return /^noindex:\s*true/m.test(raw);
 }
 
 const CONTENT_ROUTES = new Set(
@@ -108,6 +114,11 @@ const audited = [];
 
 for (const route of INDEXABLE) {
   if (!CONTENT_ROUTES.has(route)) continue;
+  const mdFile = fs.readdirSync(pagesDir).find((f) => {
+    const r = contentPageRouteByFile(f);
+    return r === route;
+  });
+  if (mdFile && isDraftNoindex(mdFile)) continue;
   const file = htmlPath(route);
   if (!fs.existsSync(file)) {
     errors.push(`${route}: no built HTML`);

@@ -1,17 +1,15 @@
+import { ABI_ROUTES } from '../config/routes';
 import { CHECKOUT_HUB_PATH, checkoutPath } from '../config/checkout';
 
 export type CheckoutProductId = 'main-product' | 'cloud-dma' | 'hwid-spoofer';
 
-/** Pages where buy goes straight to one product (no three-way chooser). */
 const LOCKED_PRODUCT_BY_ROUTE: Record<string, CheckoutProductId> = {
-  '/': 'main-product',
-  '/bodycam-cheats-price/': 'main-product',
-  '/bodycam-aimbot/': 'main-product',
-  '/bodycam-esp/': 'main-product',
-  '/bodycam-requirements/': 'main-product',
-  '/cloud-dma-for-bodycam/': 'cloud-dma',
-  '/guides/cloud-dma-setup/': 'cloud-dma',
-  '/hwid-spoofer/': 'hwid-spoofer',
+  [ABI_ROUTES.pricing]: 'main-product',
+  [ABI_ROUTES.aimbot]: 'main-product',
+  [ABI_ROUTES.esp]: 'main-product',
+  [ABI_ROUTES.cloudDma]: 'cloud-dma',
+  [ABI_ROUTES.cloudDmaSetup]: 'cloud-dma',
+  [ABI_ROUTES.hwidSpoofer]: 'hwid-spoofer',
 };
 
 export function normalizeSitePath(pathname: string): string {
@@ -36,7 +34,6 @@ export function checkoutHrefForProduct(product: CheckoutProductId): string {
   }
 }
 
-/** Header / generic “Buy” CTA: hub when ambiguous, direct on product pages. */
 export function primaryBuyHref(pathname: string): string {
   const locked = lockedCheckoutProduct(pathname);
   if (locked) return checkoutHrefForProduct(locked);
@@ -45,6 +42,15 @@ export function primaryBuyHref(pathname: string): string {
 
 export function opensCheckoutHub(pathname: string): boolean {
   return lockedCheckoutProduct(pathname) === null;
+}
+
+/** Props for buy CTAs: hub dialog on generic pages, plain link on product pages. */
+export function buyCtaAttrs(pathname: string): { href: string; 'data-checkout-hub'?: '' } {
+  const href = primaryBuyHref(pathname);
+  if (opensCheckoutHub(pathname)) {
+    return { href, 'data-checkout-hub': '' };
+  }
+  return { href };
 }
 
 export function checkoutPanelHeading(product: CheckoutProductId): string {

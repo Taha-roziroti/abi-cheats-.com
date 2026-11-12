@@ -9,6 +9,7 @@ import { loadContentPage } from '../utils/loadContentPage';
 import { jsonLdForContentPage } from '../utils/contentPageJsonLd';
 import { defaultWebpSrc, HERO_IMAGE_WIDTHS } from '../utils/responsiveImage';
 import { BODYCAM_HERO } from '../data/placeholders';
+import { buyCtaAttrs } from '../utils/checkoutContext';
 import '@/styles/content-markdown.css';
 
 const seo = resolvePageSeo('/');
@@ -22,6 +23,7 @@ const jsonLd = jsonLdForContentPage({
   schemaTypes: data.schemaTypes,
 });
 const lcpPreload = defaultWebpSrc(BODYCAM_HERO, HERO_IMAGE_WIDTHS);
+const endCta = buyCtaAttrs('/');
 ---
 
 <BaseLayout
@@ -30,7 +32,7 @@ const lcpPreload = defaultWebpSrc(BODYCAM_HERO, HERO_IMAGE_WIDTHS);
   jsonLd={jsonLd}
   ogImage={data.ogImage}
   ogImageAlt={data.heroImage?.alt ?? data.seoTitle}
-  logoAlt="Bodycam Cheats – logo"
+  logoAlt="ABI Cheats – logo"
 >
   <link
     slot="head"
@@ -42,7 +44,7 @@ const lcpPreload = defaultWebpSrc(BODYCAM_HERO, HERO_IMAGE_WIDTHS);
     media="(min-width: 1024px)"
   />
   <HomeLanding />
-  <section class="border-t border-border bg-muted/10 py-12 md:py-16" aria-label="Bodycam cheats overview">
+  <section class="border-t border-border bg-muted/10 py-12 md:py-16" aria-label="Main product overview">
     <div class="content-markdown mx-auto w-full max-w-4xl px-5">
       <HomeContent />
       <ContentFigures figures={data.figures} />
@@ -51,10 +53,11 @@ const lcpPreload = defaultWebpSrc(BODYCAM_HERO, HERO_IMAGE_WIDTHS);
           <div class="not-prose mt-10 flex justify-center">
             <Button
               as="a"
-              href={data.endCtaHref ?? '/go/bodycam/'}
+              href={data.endCtaHref ?? endCta.href}
               variant="primary"
               size="lg"
               class="w-full max-w-full rounded-xl text-center whitespace-normal sm:w-auto sm:whitespace-nowrap"
+              {...(data.endCtaHref ? {} : endCta['data-checkout-hub'] !== undefined ? { 'data-checkout-hub': '' } : {})}
             >
               {data.endCtaLabel}
             </Button>

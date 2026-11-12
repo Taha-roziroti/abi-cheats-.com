@@ -41,6 +41,7 @@ const imageWidths = isHero ? HERO_IMAGE_WIDTHS : undefined;
   <Carousel
     autoInit={!isHero}
     data-hero-embla={isHero || undefined}
+    data-lenis-prevent={isHero || undefined}
     opts={{ loop: images.length > 1, align: 'start' }}
     class="w-full"
   >

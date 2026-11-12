@@ -3,9 +3,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
 import { resolvePathRedirect } from './redirects.mjs';
-import { resolveCheckoutPathRedirect } from '../src/config/checkout-redirects.mjs';
+import {
+  checkoutBridgeHtml,
+  resolveCheckoutPathRedirect,
+} from '../src/config/checkout-redirects.mjs';
 
-const CANONICAL_HOST = 'bodycam-cheats.com';
+const CANONICAL_HOST = 'abi-cheats.com';
 const distDir = path.resolve('dist');
 const port = Number(process.env.PORT) || 3000;
 
@@ -166,8 +169,13 @@ const server = http.createServer((req, res) => {
   const { pathname, query, fragment } = splitUrl(req.url);
   const checkoutRedirect = resolveCheckoutPathRedirect(pathname, query);
   if (checkoutRedirect) {
-    res.writeHead(302, { Location: checkoutRedirect });
-    res.end();
+    const html = checkoutBridgeHtml(checkoutRedirect);
+    res.writeHead(200, {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'no-store',
+      'Referrer-Policy': 'no-referrer',
+    });
+    res.end(html);
     return;
   }
 

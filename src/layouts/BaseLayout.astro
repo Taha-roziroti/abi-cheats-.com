@@ -211,6 +211,16 @@ const showCheckoutHub = opensCheckoutHub(pathname);
         window.setTimeout(loadSite, 150);
       }
     </script>
+    <script>
+      import { initMotion } from '../scripts/motion.ts';
+
+      const bootMotion = () => initMotion();
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bootMotion, { once: true });
+      } else {
+        bootMotion();
+      }
+    </script>
     {
       GA_MEASUREMENT_ID && (
         <script is:inline define:vars={{ GA_MEASUREMENT_ID }}>

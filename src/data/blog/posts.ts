@@ -5,7 +5,7 @@ export const blogPosts: BlogPostFull[] = [
     tag: 'Guides',
     title: 'Placeholder blog post — replace with your first article',
     slug: 'placeholder-article',
-    image: '/images/bodycam/bodycam-esp-forest-cyan.webp',
+    image: '/images/placeholders/blog.svg',
     desc: 'Short description placeholder for your blog listing card.',
     date: 'Jan 1, 2026',
     readTime: '3 min read',

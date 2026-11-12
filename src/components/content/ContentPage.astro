@@ -8,6 +8,7 @@ import {
   checkoutHrefForProduct,
   checkoutPanelHeading,
   lockedCheckoutProduct,
+  opensCheckoutHub,
   type CheckoutProductId,
 } from '../../utils/checkoutContext';
 import ContentFigures from './ContentFigures.astro';
@@ -20,6 +21,7 @@ import {
 } from '../../utils/contentPageJsonLd';
 import { Button } from '@/components/starwind/button';
 import { loadContentPage } from '../../utils/loadContentPage';
+import { ABI_ROUTES } from '../../config/routes';
 import { resolvePageSeo } from '../../config/seo';
 import SiteFaqSection from '../SiteFaqSection.astro';
 import { faqFilterTopicsForItems, getContentPageFaqs } from '../../data/faq';
@@ -38,15 +40,19 @@ const { Content: FullContent } = await render(entry);
 const seoMeta = resolvePageSeo(data.route);
 
 const breadcrumbs = breadcrumbsForRoute(data.route);
+const pageFaqs = getContentPageFaqs(data.route);
+const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
 const jsonLd = jsonLdForContentPage({
   route: data.route,
   seoTitle: seoMeta.title,
   metaDescription: seoMeta.description,
   schemaTypes: data.schemaTypes,
   articlePublished: data.articlePublished,
+  faqItems: pageFaqs?.map((f) => ({ q: f.q, a: f.a.replace(/<[^>]+>/g, '') })),
 });
 const ctaHref = data.endCtaHref ?? defaultEndCtaHref(data.route, data.checkout);
 const lockedProduct = lockedCheckoutProduct(data.route);
+const endCtaOpensHub = !data.endCtaHref && opensCheckoutHub(data.route);
 const sidebarDefaultProduct: CheckoutProductId =
   lockedProduct ??
   (data.checkout === 'cloud-dma'
@@ -73,22 +79,21 @@ const lcpPreload =
     : null;
 
 const logoAltByRoute: Record<string, string> = {
-  '/': 'Bodycam Cheats – logo',
-  '/bodycam-cheats-price/': 'Bodycam pricing – logo',
-  '/bodycam-aimbot/': 'Bodycam aimbot – logo',
-  '/bodycam-esp/': 'Bodycam ESP – logo',
-  '/bodycam-requirements/': 'Bodycam requirements – logo',
-  '/cloud-dma-for-bodycam/': 'Cloud DMA for Bodycam – logo',
-  '/guides/cloud-dma-setup/': 'Cloud DMA setup – logo',
+  [ABI_ROUTES.home]: 'ABI Cheats – logo',
+  [ABI_ROUTES.pricing]: 'Arena Breakout Infinite pricing – logo',
+  [ABI_ROUTES.aimbot]: 'Arena Breakout Infinite aimbot – logo',
+  [ABI_ROUTES.esp]: 'Arena Breakout Infinite ESP – logo',
+  [ABI_ROUTES.cloudDma]: 'Cloud DMA for ABI – logo',
+  [ABI_ROUTES.cloudDmaSetup]: 'Cloud DMA setup – logo',
+  [ABI_ROUTES.hwidSpoofer]: 'ABI HWID spoofer – logo',
 };
 const logoAlt = logoAltByRoute[data.route];
-const pageFaqs = getContentPageFaqs(data.route);
-const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
 ---
 
 <BaseLayout
   title={seoMeta.title}
   description={seoMeta.description}
+  noindex={data.noindex}
   jsonLd={jsonLd}
   ogType={ogType}
   ogImage={data.ogImage}
@@ -201,6 +206,7 @@ const pageFaqTopics = pageFaqs ? faqFilterTopicsForItems(pageFaqs) : [];
             variant="primary"
             size="lg"
             class="w-full max-w-full rounded-xl text-center whitespace-normal sm:w-auto sm:whitespace-nowrap"
+            {...(endCtaOpensHub ? { 'data-checkout-hub': '' } : {})}
           >
             {data.endCtaLabel}
           </Button>

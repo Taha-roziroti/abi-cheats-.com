@@ -9,7 +9,7 @@ export type CheckoutProduct = keyof typeof CHECKOUT;
 
 /** URL slug for /go/[slug]/ checkout redirect pages. */
 export const CHECKOUT_SLUGS: Record<CheckoutProduct, string> = {
-  mainProduct: 'bodycam',
+  mainProduct: 'abi',
   cloudDma: 'cloud-dma',
   dota2: 'dota-2',
   skinChanger: 'skin-changer',
@@ -47,7 +47,6 @@ export function checkoutForSlug(slug: string): string {
     case 'elite':
     case 'main-product':
     case 'bodycam':
-    case 'borderlands-3':
       return checkoutPath('mainProduct');
     case 'cloud-dma':
       return checkoutPath('cloudDma');
@@ -72,9 +71,11 @@ export function resolveCheckoutHref(href: string): string {
     return checkoutPath('cloudDma');
   }
   if (
+    href.includes('/products/abi') ||
+    href.includes('%2Fproducts%2Fabi') ||
     href.includes('main-product') ||
-    href.includes('borderlands-3') ||
-    href.includes('/products/borderlands-3')
+    href.includes('/products/bodycam') ||
+    href.includes('%2Fproducts%2Fbodycam')
   ) {
     return checkoutPath('mainProduct');
   }

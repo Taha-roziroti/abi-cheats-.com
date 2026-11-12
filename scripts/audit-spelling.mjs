@@ -1,5 +1,5 @@
 /**
- * Spell-check indexable Bodycam copy (money pages + shared SEO metadata).
+ * Spell-check indexable ABI money-page copy and shared SEO metadata.
  */
 import fs from 'node:fs';
 import path from 'node:path';

@@ -14,9 +14,10 @@ import { Button } from '@/components/starwind/button';
       desc="Review plans, Hyper-V setup, and PC requirements before you launch the cheat stack."
       titleId="guides-title"
       titleAs="h2"
+      motionReveal="up"
     />
 
-    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-10">
+    <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-10" data-reveal-stagger>
       {
         landingGuideCards.map((guide) => (
           <article class="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-colors hover:border-primary/35">

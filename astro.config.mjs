@@ -4,18 +4,23 @@ import sitemap from '@astrojs/sitemap';
 import { sitemapSerialize } from './src/config/sitemap.ts';
 
 export default defineConfig({
-  site: 'https://bodycam-cheats.com',
+  site: 'https://abi-cheats.com',
   trailingSlash: 'always',
   redirects: {
-    '/pricing/': '/bodycam-cheats-price/',
-    '/guides/system-requirements/': '/bodycam-requirements/',
-    '/cloud-dma/': '/cloud-dma-for-bodycam/',
-    '/go/main-product/': '/go/bodycam/',
-    '/go/borderlands-3/': '/go/bodycam/',
-    '/guides/borderlands-3-cheat-system-requirements/': '/bodycam-requirements/',
+    '/pricing/': '/arena-breakout-infinite-cheats-pricing/',
+    '/guides/system-requirements/': '/',
+    '/cloud-dma/': '/cloud-dma-for-arena-breakout-infinite/',
+    '/go/main-product/': '/go/abi/',
+    '/go/bodycam/': '/go/abi/',
     '/cloud-dma-setup/': '/guides/cloud-dma-setup/',
     '/bodycam-hacks/': '/',
     '/bodycam-cheats/': '/',
+    '/bodycam-esp/': '/arena-breakout-infinite-esp/',
+    '/bodycam-aimbot/': '/arena-breakout-infinite-aimbot/',
+    '/bodycam-cheats-price/': '/arena-breakout-infinite-cheats-pricing/',
+    '/bodycam-requirements/': '/',
+    '/cloud-dma-for-bodycam/': '/cloud-dma-for-arena-breakout-infinite/',
+    '/hwid-spoofer/': '/arena-breakout-infinite-hwid-spoofer/',
     '/cheats/': '/',
     '/products/dota-2-cheats/': '/',
     '/cheats/compare/': '/blog/placeholder-article/',
@@ -31,7 +36,10 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/404') && !page.includes('/go/'),
+      filter: (page) =>
+        !page.includes('/404') &&
+        !page.includes('/go/') &&
+        !page.includes('/arena-breakout-infinite-hwid-spoofer/'),
       serialize: sitemapSerialize,
     }),
   ],
@@ -50,7 +58,6 @@ export default defineConfig({
     },
   },
   build: {
-    /** Keep HTML small; browsers cache external CSS across routes. */
     inlineStylesheets: 'auto',
   },
 });

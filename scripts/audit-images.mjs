@@ -1,5 +1,5 @@
 /**
- * Image alt text and Bodycam asset utilization (SEO audit item 11).
+ * Image alt text and ABI asset utilization (SEO Super Booster §5).
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -8,7 +8,7 @@ import { PAGE_SEO } from '../src/config/pageSeo.ts';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
 const dist = path.join(root, 'dist');
-const catalogPath = path.join(root, 'src', 'data', 'bodycamImages.ts');
+const catalogPath = path.join(root, 'src', 'data', 'abiImages.ts');
 const pagesDir = path.join(root, 'content', 'pages');
 
 const errors = [];
@@ -27,7 +27,7 @@ function htmlPath(route) {
 function readCatalog() {
   const src = fs.readFileSync(catalogPath, 'utf8');
   const entries = [];
-  const blockRe = /(\w+):\s*\{\s*src:\s*'([^']+)',\s*alt:\s*'([^']+)'/g;
+  const blockRe = /(\w+):\s*\{\s*src:\s*['"]([^'"]+)['"],\s*alt:\s*['"]([^'"]+)['"]/g;
   let m;
   while ((m = blockRe.exec(src))) {
     entries.push({ key: m[1], src: m[2], alt: m[3] });
@@ -140,7 +140,7 @@ for (const route of INDEXABLE) {
       const expected = catalogBySrc.get(src).alt;
       if (alt !== expected) {
         warnings.push(
-          `${route}: alt differs from bodycamImages catalog for ${src} (page-specific OK if intentional)`,
+          `${route}: alt differs from abiImages catalog for ${src} (page-specific OK if intentional)`,
         );
       }
     }

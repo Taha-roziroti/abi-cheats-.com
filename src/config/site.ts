@@ -1,8 +1,8 @@
-export const SITE_DOMAIN = 'bodycam-cheats.com';
+export const SITE_DOMAIN = 'abi-cheats.com';
 export const SITE_URL = `https://${SITE_DOMAIN}`;
-export const SITE_BRAND = 'Bodycam Cheats';
+export const SITE_BRAND = 'ABI Cheats';
 export const PRODUCT_BASE = '/';
-export const TITLE_PREFIX = 'Bodycam Cheats for PC';
+export const TITLE_PREFIX = 'Arena Breakout Infinite Cheats';
 export const SUPPORT_EMAIL = `support@${SITE_DOMAIN}`;
 
 export {

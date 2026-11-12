@@ -18,11 +18,10 @@ const warnings = [];
 
 const INDEXABLE_MONEY_ROUTES = [
   '/',
-  '/bodycam-aimbot/',
-  '/bodycam-esp/',
-  '/bodycam-cheats-price/',
-  '/bodycam-requirements/',
-  '/cloud-dma-for-bodycam/',
+  '/arena-breakout-infinite-esp/',
+  '/arena-breakout-infinite-aimbot/',
+  '/arena-breakout-infinite-cheats-pricing/',
+  '/cloud-dma-for-arena-breakout-infinite/',
 ];
 
 const PLACEHOLDER_PATTERNS = [

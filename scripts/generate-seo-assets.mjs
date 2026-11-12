@@ -4,7 +4,7 @@ import sharp from 'sharp';
 
 const root = process.cwd();
 const ogDir = path.join(root, 'public', 'og');
-const heroSource = path.join(root, 'public', 'images', 'bodycam', 'bodycam-hero.webp');
+const heroSource = path.join(root, 'public', 'images', 'abi', 'abi-hero.webp');
 
 const outputs = [
   'default.jpg',

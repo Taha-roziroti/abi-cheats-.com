@@ -23,7 +23,7 @@ function cardLabel(product: (typeof landingProducts)[number]) {
 }
 ---
 
-<section id="products" class="py-16 md:py-24" aria-labelledby="products-title">
+<section id="plans" class="py-16 md:py-24" aria-labelledby="products-title">
   <div class="mx-auto max-w-6xl px-5">
     <SectionHeader
       eyebrow={s.eyebrow}
@@ -33,9 +33,10 @@ function cardLabel(product: (typeof landingProducts)[number]) {
       titleAs="h2"
       wide
       flush
+      motionReveal="up"
     />
 
-    <div class="products-carousel" data-products-carousel>
+    <div class="products-carousel" data-products-carousel data-reveal="scale" data-lenis-prevent>
       <Carousel
         autoInit
         opts={{ align: 'start', containScroll: 'trimSnaps', dragFree: false }}
