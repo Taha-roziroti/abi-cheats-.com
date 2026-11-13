@@ -7,20 +7,19 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 
 const root = path.join(path.dirname(fileURLToPath(import.meta.url)), '..');
+const pagesDir = path.join(root, 'content', 'pages');
 
 const TARGETS = [
-  'content/pages/home.md',
-  'content/pages/bodycam-aimbot.md',
-  'content/pages/bodycam-esp.md',
-  'content/pages/bodycam-cheats-price.md',
-  'content/pages/bodycam-requirements.md',
-  'content/pages/cloud-dma-for-bodycam.md',
-  'content/pages/cloud-dma-setup.md',
+  ...fs
+    .readdirSync(pagesDir)
+    .filter((f) => f.endsWith('.md') && !f.includes('bodycam'))
+    .map((f) => `content/pages/${f}`),
   'src/config/pageSeo.ts',
-  'src/data/bodycamPageFaqs.ts',
+  'src/data/faq.ts',
+  'src/i18n/en.ts',
 ];
 
-const files = TARGETS.map((rel) => path.join(root, rel)).filter((f) => fs.existsSync(f));
+const files = [...new Set(TARGETS.map((rel) => path.join(root, rel)))].filter((f) => fs.existsSync(f));
 if (!files.length) {
   console.error('audit-spelling: no target files found');
   process.exit(1);

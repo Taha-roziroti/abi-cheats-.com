@@ -1,7 +1,7 @@
 ---
 route: /guides/cloud-dma-setup/
-seoTitle: Cloud DMA Setup for ABI | Hyper-V Walkthrough
-metaDescription: 'Hyper-V setup for Cloud DMA on one PC: enable virtualization, allocate RAM, finish activation, and verify before loading Arena Breakout Infinite.'
+seoTitle: Cloud DMA Setup for ABI | Hyper-V Walkthrough Guide
+metaDescription: 'Hyper-V Cloud DMA on one Windows PC: enable virtualization, allocate RAM, finish activation, verify setup, then continue to ABI cheat checkout.'
 schemaTypes:
   - Article
   - WebPage

@@ -97,6 +97,8 @@ async function main() {
             const rect = el.getBoundingClientRect();
             if (rect.width < 8 || rect.height < 8) continue;
 
+            if (el.closest('.products-carousel, [data-slot="carousel-content"]')) continue;
+
             const inCarousel = el.closest('[data-slot="carousel-content"]');
             if (inCarousel) {
               const visible =

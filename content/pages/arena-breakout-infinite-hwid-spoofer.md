@@ -9,7 +9,7 @@ checkout: hwid-spoofer
 noindex: true
 heroImage:
   src: /images/abi/abi-menu-visuals.webp
-  alt: 'Arena Breakout Infinite cheat Visuals menu — reference for HWID spoofer buyers on Windows PC'
+  alt: 'Arena Breakout Infinite cheat menu showing Visuals tab with player ESP, bot ESP, skeleton and loot settings'
 endCtaLabel: 'Explore Product Details'
 endCtaHref: '/'
 figures:

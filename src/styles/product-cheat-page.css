@@ -166,6 +166,11 @@
   overflow: hidden;
 }
 
+.catalog-card__cta {
+  white-space: normal;
+  text-wrap: balance;
+}
+
 .catalog-card__cta--stacked {
   height: auto;
   min-height: 2.25rem;

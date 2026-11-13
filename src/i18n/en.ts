@@ -118,7 +118,7 @@ export const en: Translations = {
   },
   whyUs: {
     eyebrow: 'Why us',
-    title: 'A Arena Breakout Infinite–focused catalog—not a mixed-game marketplace',
+    title: 'An Arena Breakout Infinite–focused catalog—not a mixed-game marketplace',
     subtitle:
       'We document one game, one seller stack, and real menu names—so you are not cross-reading Dota-era leftovers from an old template.',
     usLabel: 'ABI Cheats',
